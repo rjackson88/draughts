@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.springframework.cloud:spring-cloud-task-core:1.2.0.BUILD-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-task-core/1.2.0.BUILD-SNAPSHOT/spring-cloud-task-core-1.2.0.BUILD-20170306.172201-14.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-task-core/1.2.0.BUILD-SNAPSHOT/spring-cloud-task-core-1.2.0.BUILD-20170306.172201-14-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-task-core/1.2.0.BUILD-SNAPSHOT/spring-cloud-task-core-1.2.0.BUILD-20170306.172201-14-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
