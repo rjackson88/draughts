@@ -99,4 +99,40 @@ public class Board {
     public void setBlackCount(int blackCount) {
         this.blackCount = blackCount;
     }
+    
+    private static class Node<T extends Square> {
+        Piece piece;
+        T upLeft;
+        T upRight;
+        T downRight;
+        T downLeft;
+        
+        Node() {
+            
+        }
+        
+        Node(T square) {
+            this.square = square;
+        }
+        
+        public Piece get() {
+            return this.piece;
+        }
+        
+        public void set(Piece piece) {
+            this.piece = piece;
+        }
+        
+        // public T get() {
+        //     return this.square;
+        // }
+        //
+        // public void set(T square) {
+        //     this.square = square;
+        // }
+        
+        public boolean isEmpty() {
+            return this.piece == null;
+        }
+    }
 }

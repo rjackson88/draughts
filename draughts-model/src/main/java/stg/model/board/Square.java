@@ -14,6 +14,11 @@ public class Square {
         
     }
     
+    public Square(int row, int col) {
+        this.coordinates[0] = row;
+        this.coordinates[1] = col;
+    }
+    
     public Square(int row, int col, SquareColor color) {
         this.coordinates[0] = row;
         this.coordinates[1] = col;
@@ -28,9 +33,30 @@ public class Square {
         return coordinates;
     }
     
-    public void setCoordinates(int row, int col) {
+    public void getCoordinates(int row, int col) {
         coordinates[0] = row;
         coordinates[1] = col;
+    }
+    
+    public int[] getCoordinatesFromIndex(int index) {
+        int[] c = new int[2];
+        c[0] = getRowFromIndex(index);
+        c[1] = getColFromIndex(index);
+        return c;
+    }
+    
+    public int getRowFromIndex(int index) {
+        return index / 4;
+    }
+    
+    public int getColFromIndex(int index) {
+        int r = getRowFromIndex(index);
+        int tmp =  index - r * 4;
+        return isOdd(r) ? tmp * 2 : tmp * 2 + 1;
+    }
+    
+    public int index() {
+        return (getRow() * 4) + (getCol() / 2);
     }
     
     public int getRow() {
@@ -49,17 +75,20 @@ public class Square {
         this.coordinates[1] = col;
     }
     
-    public int index() {
-        int result = (getRow() * 4) + ((getCol() + 1) / 2);
-        return (getRow() % 2 == 0) ? result : result + 1;
-    }
-    
     public SquareColor getColor() {
         return color;
     }
     
     public void setColor(SquareColor color) {
         this.color = color;
+    }
+    
+    boolean isOdd(int n) {
+        return n % 2 != 0;
+    }
+    
+    boolean isModFour(int n) {
+        return n % 4 == 0;
     }
     
     private static class Node<T extends Square> {
