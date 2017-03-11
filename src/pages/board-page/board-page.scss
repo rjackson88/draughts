@@ -1,33 +1,39 @@
-page-board-page {
+.row{
 
+  
 }
-
-
 .col{
-border-style: solid;
-border-width: .25px; 
+
+  border-style: solid;
+     border-width: .25px; 
 
 }
 
-.bl{
- background-color: darkred;
-    
-}
+
+ .bl{
+    background-color: darkred;
+  
+ }
 
 .wh{
 
-   background-color: black;
+    background-color: black;
 }
-
-.row {
-
+ .row {
     height: 62.5px;
-    width: 500px; 
+    width: 500px;
+}
+.grid{
+    width: 512.5px;
+    border-style: solid;
+    border-width: 1px;
 }
 
-.board{
+.buttonBlack{
 
-    width: 512.5 px; 
-    border-style: solid; 
-    border-width: 1 px; 
+    height: 62.5 px !important;
+    background-image: "../../assets/RedRealistic.png" !important;
+
 }
+
+

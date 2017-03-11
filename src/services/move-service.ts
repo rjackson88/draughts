@@ -1,18 +1,47 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import 'rxjs/add/operator/map';
 
-/*
-  Generated class for the MoveService provider.
-
-  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
-  for more info on providers and Angular 2 DI.
-*/
 @Injectable()
 export class MoveService {
+    public data: any;
+    responseData: any = [{}];
+    private url: string = "http://127.0.0.1:8080/playerMove";
+    private initUrl: string = "http://127.0.0.1:8080/start";
 
-  constructor(public http: Http) {
-    console.log('Hello MoveService Provider');
-  }
+      initialState:any ;
+
+    constructor(private http: Http){
+    }
+
+    getInitialState(){
+        return this.http.get(this.initUrl);
+    }
+
+    submitMove(firstCoordinate: string, secondCoordinate: string) {
+
+        this.data = {
+            "firstCoordinate": firstCoordinate,
+            "secondCoordinate": secondCoordinate
+        };
+
+        console.log("Before new data: ")
+        // this.http.post(this.url, this.data).subscribe(response => {
+        //     this.responseData = response.json();
+        //     console.log("in response data: ");
+        //     console.log(this.responseData);
+        //     console.log("\n new data! \n");
+        // });
+
+
+        // return this.responseData;
+        return this.http.post(this.url, this.data);
+    }
+
+
+
+    submitFirstSelectedPiece(selectedPiece: number, boardState:any ){
+
+      return this.http.post(this.url, this.data, boardState)
+    }
 
 }

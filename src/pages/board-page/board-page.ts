@@ -25,67 +25,69 @@ public data: any;
 
 
     this.data = [{
-      "01" : "BlackMan",
-      "02" : "BlackMan",
-      "03" : "BlackMan",
-      "04" : "BlackMan",
-      "05" : "BlackMan",
-      "06" : "BlackMan",
-      "07" : "BlackMan",
-      "08" : "BlackMan",
-      "09" : "BlackMan",
-      "10" : "BlackMan",
-      "11" : "BlackMan",
-      "12" : "BlackMan",
-      "13" : "Empty",
-      "14" : "Empty",
-      "15" : "Empty",
-      "16" : "Empty",
-      "17" : "Empty",
-      "18" : "Empty",
-      "19" : "Empty",
-      "20" : "Empty",
-      "21" : "WhiteMan",
-      "22" : "WhiteMan",
-      "23" : "WhiteMan",
-      "24" : "WhiteMan",
-      "25" : "WhiteMan",
-      "26" : "WhiteMan",
-      "27" : "WhiteMan",
-      "28" : "WhiteMan",
-      "29" : "WhiteMan",
-      "30" : "WhiteMan",
-      "31" : "WhiteMan",
-      "32" : "WhiteMan",
+      "one" : "BlackMan",
+      "two" : "BlackMan",
+      "three" : "BlackMan",
+      "four" : "BlackMan",
+      "five" : "BlackMan",
+      "six" : "BlackMan",
+      "seven" : "BlackMan",
+      "eight" : "BlackMan",
+      "nine" : "BlackMan",
+      "ten" : "BlackMan",
+      "eleven" : "BlackMan",
+      "twelve" : "BlackMan",
+      "thirteen" : "Empty",
+      "fourteen" : "Empty",
+      "fifteen" : "Empty",
+      "sixteen" : "Empty",
+      "seventeen" : "Empty",
+      "eighteen" : "Empty",
+      "nineteen" : "Empty",
+      "twenty" : "Empty",
+      "twentyone" : "WhiteMan",
+      "twentytwo" : "WhiteMan",
+      "twentythree" : "WhiteMan",
+      "twentyfour" : "WhiteMan",
+      "twentyfive" : "WhiteMan",
+      "twentysix" : "WhiteMan",
+      "twentyseven" : "WhiteMan",
+      "twentyeight" : "WhiteMan",
+      "twentynine" : "WhiteMan",
+      "thirty" : "WhiteMan",
+      "thirtyone" : "WhiteMan",
+      "thirtytwo" : "WhiteMan"
       }]
   }
 
-  ngOnInit(){
-
-      this.data = [{}];
-      
-
-  }
 
   initGame(){
 
 
   }
 
+  fetchMoveService(){
+        this.moveService.getInitialState().subscribe(response => {
+            this.data = response.json();
+        });;
+  }
 
-  populatePosition(position: string){
+
+  populatePosition(position: string) : string{
       if(position == "BlackMan"){
         return '../../assets/BlackRealistic.png'
 
       }
       else if(position == "WhiteMan"){
 
-        return '../../assets/WhiteRealistic.png'
+        return '../../assets/RedRealistic.png'
       }
       else if(position == "Moveable"){
 
         return '../../assets/transparency.png'
       }
+
+      else return ' '
   }
 
   }
