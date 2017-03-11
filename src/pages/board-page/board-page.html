@@ -15,37 +15,38 @@
   <ion-row class ='row'>
     <ion-col width-12.5 class ='bl'></ion-col>
     <ion-col width-12.5 class ='wh' id='01'>
-      <img [src]="populatePosition(data[0].one)">
+      <img [src]="populatePosition(checkersBoard.board[0])">
+       <button class='button' on-click="fetchMoveService()"></button>
     </ion-col>
      <ion-col width-12.5 class ='bl'></ion-col>
     <ion-col width-12.5 class ='wh' id ='02'>
-      <img [src]="populatePosition(data[0].two)">
+      <img [src]="populatePosition(checkersBoard.board[1])">
     </ion-col>
      <ion-col width-12.5 class ='bl'></ion-col>
     <ion-col width-12.5 class ='wh' id = '03'>
-      <img [src]="populatePosition(data[0].three)">
+      <img [src]="populatePosition(checkersBoard.board[2])">
     </ion-col>
      <ion-col width-12.5 class ='bl'></ion-col>
     <ion-col width-12.5 class ='wh' id = '04'>
-      <img [src]="populatePosition(data[0].four)">
+      <img [src]="populatePosition(checkersBoard.board[3])">
     </ion-col>
   </ion-row>
 
   <ion-row class ='row'>  
     <ion-col class = 'wh' id='05'>
-       <img [src]="populatePosition(data[0].five)">
+       <img [src]="populatePosition(checkersBoard.board[4])">
     </ion-col>
      <ion-col class = 'bl'></ion-col>    
     <ion-col class = 'wh' id ='06'>
-       <img [src]="populatePosition(data[0].six)">
+       <img [src]="populatePosition(checkersBoard.board[5])">
     </ion-col>
     <ion-col class = 'bl'></ion-col>
     <ion-col class = 'wh' id = '07'>
-       <img [src]="populatePosition(data[0].seven)">
+       <img [src]="populatePosition(checkersBoard.board[6])">
     </ion-col>
     <ion-col class = 'bl'></ion-col>
     <ion-col class = 'wh' id = '08'>
-       <img [src]="populatePosition(data[0].eight)">
+       <img [src]="populatePosition(checkersBoard.board[7])">
     </ion-col>
     <ion-col class = 'bl'></ion-col>
   </ion-row>
@@ -53,37 +54,37 @@
    <ion-row class = "row">
     <ion-col class = 'bl'></ion-col>
     <ion-col class = 'wh' id='09'>
-       <img [src]="populatePosition(data[0].nine)">
+       <img [src]="populatePosition(checkersBoard.board[8])">
     </ion-col>
      <ion-col class = 'bl'></ion-col>
     <ion-col class = 'wh' id ='10'>
-       <img [src]="populatePosition(data[0].ten)">
+       <img [src]="populatePosition(checkersBoard.board[9])">
     </ion-col>
      <ion-col class = 'bl'></ion-col>
     <ion-col class = 'wh' id = '11'>
-       <img [src]="populatePosition(data[0].eleven)">
+       <img [src]="populatePosition(checkersBoard.board[10])">
     </ion-col>
      <ion-col class = 'bl'></ion-col>
     <ion-col class = 'wh' id = '12'>
-       <img [src]="populatePosition(data[0].twelve)">
+       <img [src]="populatePosition(checkersBoard.board[11])">
     </ion-col>
   </ion-row>
 
   <ion-row class ="row">  
     <ion-col class = 'wh' id='13'>
-       <img [src]="populatePosition(data[0].thirteen)">
+       <img [src]="populatePosition(checkersBoard.board[12])">
     </ion-col>
      <ion-col class = 'bl'></ion-col>    
     <ion-col class = 'wh' id ='14'>
-       <img [src]="populatePosition(data[0].fourteen)">
+       <img [src]="populatePosition(checkersBoard.board[13])">
     </ion-col>
     <ion-col class = 'bl'></ion-col>  
     <ion-col class = 'wh' id = '15'>
-       <img [src]="populatePosition(data[0].fifteen)">
+       <img [src]="populatePosition(checkersBoard.board[14])">
     </ion-col>
     <ion-col class = 'bl'></ion-col>  
     <ion-col class = 'wh' id = '16'>
-       <img [src]="populatePosition(data[0].sixteen)">
+       <img [src]="populatePosition(checkersBoard.board[15])">
     </ion-col>
     <ion-col class = 'bl'></ion-col>
   </ion-row>
@@ -91,37 +92,37 @@
    <ion-row class = "row">
     <ion-col class = 'bl'></ion-col>
     <ion-col class = 'wh' id='17'>
-       <img [src]="populatePosition(data[0].seventeen)">
+       <img [src]="populatePosition(checkersBoard.board[16])">
     </ion-col>
      <ion-col class = 'bl'></ion-col>
     <ion-col class = 'wh' id ='18'>
-       <img [src]="populatePosition(data[0].eighteen)">
+       <img [src]="populatePosition(checkersBoard.board[17])">
     </ion-col>
      <ion-col class = 'bl'></ion-col>
     <ion-col class = 'wh' id = '19'>
-       <img [src]="populatePosition(data[0].nineteen)">
+       <img [src]="populatePosition(checkersBoard.board[18])">
     </ion-col>
      <ion-col class = 'bl'></ion-col>
     <ion-col class = 'wh' id = '20'>
-       <img [src]="populatePosition(data[0].twenty)">
+       <img [src]="populatePosition(checkersBoard.board[19])">
     </ion-col>
   </ion-row>
 
   <ion-row class="row">
     <ion-col class = 'wh' id='21'>
-       <img [src]="populatePosition(data[0].twentyone)">
+       <img [src]="populatePosition(checkersBoard.board[20])">
     </ion-col>
      <ion-col class = 'bl'></ion-col> 
     <ion-col class = 'wh' id ='22'>
-       <img [src]="populatePosition(data[0].twentytwo)">
+       <img [src]="populatePosition(checkersBoard.board[21])">
     </ion-col>
     <ion-col class = 'bl'></ion-col> 
     <ion-col class = 'wh' id = '23'>
-       <img [src]="populatePosition(data[0].twentythree)">
+       <img [src]="populatePosition(checkersBoard.board[22])">
     </ion-col>
     <ion-col class = 'bl'></ion-col>
     <ion-col class = 'wh' id = '24'>
-       <img [src]="populatePosition(data[0].twentyfour)">
+       <img [src]="populatePosition(checkersBoard.board[23])">
     </ion-col>
     <ion-col class = 'bl'></ion-col>
   </ion-row>
@@ -129,39 +130,39 @@
    <ion-row class = "row">
     <ion-col class = 'bl'></ion-col>
     <ion-col class = 'wh' id='25'>
-      <img [src] = "populatePosition(data[0].twentyfive)">
+      <img [src] = "populatePosition(checkersBoard.board[24])">
     </ion-col>
      <ion-col class = 'bl'></ion-col>
     <ion-col class = 'wh' id ='26'>
-      <img [src] = "populatePosition(data[0].twentysix)">
+      <img [src] = "populatePosition(checkersBoard.board[25])">
     </ion-col>
      <ion-col class = 'bl'></ion-col>
     <ion-col class = 'wh' id = '27'>
-      <img [src] = "populatePosition(data[0].twentyseven)">
+      <img [src] = "populatePosition(checkersBoard.board[26])">
     </ion-col>
      <ion-col class = 'bl'></ion-col>
     <ion-col class = 'wh' id = '28'>
-      <img [src] = "populatePosition(data[0].twentyeight)">
+      <img [src] = "populatePosition(checkersBoard.board[27])">
     </ion-col>
   </ion-row>
 
   <ion-row class = "row">
     <ion-col class = 'wh'  id = '29'>
-      <img [src] = "populatePosition(data[0].twentynine)">
+      <img [src] = "populatePosition(checkersBoard.board[28])">
     </ion-col>
      <ion-col class = 'bl'></ion-col>
     <ion-col class = 'wh'  id ='30'>
-      <img [src] = "populatePosition(data[0].thirty)">
+      <img [src] = "populatePosition(checkersBoard.board[29])">
     </ion-col>
     <ion-col class = 'bl'>
     </ion-col>
     <ion-col class = 'wh' id = '31'>
-      <img [src] = "populatePosition(data[0].thirtyone)">
+      <img [src] = "populatePosition(checkersBoard.board[30])">
     </ion-col>
     <ion-col class = 'bl'>
     </ion-col>
     <ion-col class = 'wh' id = '32'>
-      <img [src] = "populatePosition(data[0].thirtytwo)">
+      <img [src] = "populatePosition(checkersBoard.board[31])">
     </ion-col>
     <ion-col class = 'bl'>
     </ion-col>

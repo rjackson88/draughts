@@ -6,7 +6,7 @@ export class MoveService {
     public data: any;
     responseData: any = [{}];
     private url: string = "http://127.0.0.1:8080/playerMove";
-    private initUrl: string = "http://127.0.0.1:8080/start";
+    private initUrl: string = "http://localhost:8080/newGame";
 
       initialState:any ;
 

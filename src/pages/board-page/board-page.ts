@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { MoveService } from '../../services/move-service';
+import { Http, Headers } from '@angular/http';
+import 'rxjs/add/operator/map';
+
 /*
   Generated class for the BoardPage page.
 
@@ -13,76 +16,35 @@ import { MoveService } from '../../services/move-service';
 })
 export class BoardPage {
 
+  checkersBoard : jsonInterface = new jsonInterface(new startingBoard);
+  
+       
+  constructor( public navCtrl: NavController, public navParams: NavParams, public moveService: MoveService, public http: Http) {
+ 
+}
 
-public firstSelection: any; 
-public possibleMoves: any;
-public data: any; 
+  startGame(){
+ this.http.get("http://localhost:8080/newGame").
+ subscribe(res =>{ this.checkersBoard = new jsonInterface(res.json()); console.log(this.checkersBoard)})
 
-
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, public moveService: MoveService) {
-
-
-
-    this.data = [{
-      "one" : "BlackMan",
-      "two" : "BlackMan",
-      "three" : "BlackMan",
-      "four" : "BlackMan",
-      "five" : "BlackMan",
-      "six" : "BlackMan",
-      "seven" : "BlackMan",
-      "eight" : "BlackMan",
-      "nine" : "BlackMan",
-      "ten" : "BlackMan",
-      "eleven" : "BlackMan",
-      "twelve" : "BlackMan",
-      "thirteen" : "Empty",
-      "fourteen" : "Empty",
-      "fifteen" : "Empty",
-      "sixteen" : "Empty",
-      "seventeen" : "Empty",
-      "eighteen" : "Empty",
-      "nineteen" : "Empty",
-      "twenty" : "Empty",
-      "twentyone" : "WhiteMan",
-      "twentytwo" : "WhiteMan",
-      "twentythree" : "WhiteMan",
-      "twentyfour" : "WhiteMan",
-      "twentyfive" : "WhiteMan",
-      "twentysix" : "WhiteMan",
-      "twentyseven" : "WhiteMan",
-      "twentyeight" : "WhiteMan",
-      "twentynine" : "WhiteMan",
-      "thirty" : "WhiteMan",
-      "thirtyone" : "WhiteMan",
-      "thirtytwo" : "WhiteMan"
-      }]
+  
   }
 
+fetchMoveService(){
+       this.http.post("http://localhost:8080/movePiece", this.checkersBoard ).subscribe(res => {this.checkersBoard
+       = new jsonInterface(res.json()); console.log(this.checkersBoard)})
+        };
 
-  initGame(){
-
-
-  }
-
-  fetchMoveService(){
-        this.moveService.getInitialState().subscribe(response => {
-            this.data = response.json();
-        });;
-  }
-
-
-  populatePosition(position: string) : string{
-      if(position == "BlackMan"){
+  populatePosition(piece: number) : string{
+      if(piece == 1){
         return '../../assets/BlackRealistic.png'
 
       }
-      else if(position == "WhiteMan"){
+      else if(piece == -1){
 
         return '../../assets/RedRealistic.png'
       }
-      else if(position == "Moveable"){
+      else if(piece == 3){
 
         return '../../assets/transparency.png'
       }
@@ -90,7 +52,34 @@ public data: any;
       else return ' '
   }
 
-  }
+}
+
+export class jsonInterface {
+       constructor(jsonStr: any) {
+        let jsonObj: any = (jsonStr);
+        for (let prop in jsonObj) {
+            this[prop] = jsonObj[prop];
+        }
+    }
+       board : number[];
+       positionTo: number;
+       positionFrom: number;
+       blackPieceCount: number;
+       whitePieceCount: number;
+       whiteWinner: boolean;
+       blackWinner: boolean;
+}
+
+export class startingBoard {
+ board : number[] = [1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1];
+       positionTo: number;
+       positionFrom: number;
+       blackPieceCount: number;
+       whitePieceCount: number;
+       whiteWinner: boolean;
+       blackWinner: boolean;
+
+}
 
 
 
