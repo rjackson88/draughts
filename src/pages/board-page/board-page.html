@@ -55,6 +55,7 @@
     <ion-col class = 'bl'></ion-col>
     <ion-col class = 'wh' id='09'>
        <img [src]="populatePosition(checkersBoard.board[8])">
+       <button [disabled]="!isValid(8)" class='button' on-click="moveSelection(8)"></button>
     </ion-col>
      <ion-col class = 'bl'></ion-col>
     <ion-col class = 'wh' id ='10'>
@@ -77,6 +78,7 @@
      <ion-col class = 'bl'></ion-col>    
     <ion-col class = 'wh' id ='14'>
        <img [src]="populatePosition(checkersBoard.board[13])">
+        <button class='button' on-click="moveSelection(13)"></button>
     </ion-col>
     <ion-col class = 'bl'></ion-col>  
     <ion-col class = 'wh' id = '15'>

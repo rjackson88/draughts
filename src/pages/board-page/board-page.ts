@@ -30,6 +30,15 @@ export class BoardPage {
   
   }
 
+  isValid(position: number){
+
+    if(this.checkersBoard.board[position] == 0)
+    return false;
+    else
+    return true;
+  }
+
+
 fetchMoveService(){
        this.http.post("http://localhost:8080/movePiece", this.checkersBoard ).subscribe(res => {this.checkersBoard
        = new jsonInterface(res.json()); console.log(this.checkersBoard)})
@@ -49,10 +58,43 @@ fetchMoveService(){
         return '../../assets/transparency.png'
       }
 
-      else return ' '
+      else if(piece == 0){
+        return '../../assets/clear.png'
+      }
+
+     else return ' '
+  }
+
+  moveSelection(position:number){
+
+      if(this.checkersBoard.positionFrom == 0){
+      this.checkersBoard.positionFrom = position;
+      this.http.post("http://localhost:8080/checkMoves", this.checkersBoard).subscribe(
+        res => {this.checkersBoard = new jsonInterface(res.json())}
+      )
+    }
+
+    else if(this.checkersBoard.positionFrom == position){
+          this.checkersBoard.positionFrom = 0;
+           this.http.post("http://localhost:8080/clearMoves", this.checkersBoard).subscribe(
+        res => {this.checkersBoard = new jsonInterface(res.json());}
+        )
+    }
+
+    else if(this.checkersBoard.board[position] == 3){
+      this.checkersBoard.positionTo = position;
+      this.http.post("http://localhost:8080/movePiece", this.checkersBoard).subscribe(
+        res => {this.checkersBoard = new jsonInterface(res.json()); console.log(this.checkersBoard)}
+        )
+
+    }
+    
+
   }
 
 }
+
+
 
 export class jsonInterface {
        constructor(jsonStr: any) {
@@ -68,16 +110,18 @@ export class jsonInterface {
        whitePieceCount: number;
        whiteWinner: boolean;
        blackWinner: boolean;
+       id: number;
 }
 
 export class startingBoard {
  board : number[] = [1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1];
        positionTo: number;
-       positionFrom: number;
+       positionFrom: number = 0;
        blackPieceCount: number;
        whitePieceCount: number;
        whiteWinner: boolean;
        blackWinner: boolean;
+       id: number;
 
 }
 
