@@ -101,6 +101,7 @@ public class Board {
     }
     
     private static class Node<T extends Square> {
+        T square;
         Piece piece;
         T upLeft;
         T upRight;
