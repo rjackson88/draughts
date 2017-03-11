@@ -5,6 +5,21 @@ package stg.model.board;
  */
 public enum SquareColor {
     
-    LIGHT {},
-    DARK {}
+    LIGHT {
+        @Override
+        public String toString() {
+            return "Light";
+        }
+    },
+    
+    DARK {
+        @Override
+        public String toString() {
+            return "Dark";
+        }
+    };
+    
+    public int getValue() {
+        return ordinal();
+    }
 }

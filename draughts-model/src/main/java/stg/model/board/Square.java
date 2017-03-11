@@ -8,14 +8,16 @@ import stg.model.piece.Piece;
 public class Square {
     Node<Square> square;
     private int[] coordinates = new int[2];
+    private SquareColor color;
     
     public Square() {
         
     }
     
-    public Square(int row, int col) {
+    public Square(int row, int col, SquareColor color) {
         this.coordinates[0] = row;
         this.coordinates[1] = col;
+        this.color = color;
     }
     
     public Square getSquare() {
@@ -47,6 +49,19 @@ public class Square {
         this.coordinates[1] = col;
     }
     
+    public int index() {
+        int result = (getRow() * 4) + ((getCol() + 1) / 2);
+        return (getRow() % 2 == 0) ? result : result + 1;
+    }
+    
+    public SquareColor getColor() {
+        return color;
+    }
+    
+    public void setColor(SquareColor color) {
+        this.color = color;
+    }
+    
     private static class Node<T extends Square> {
         Piece piece;
         T square;
@@ -63,13 +78,21 @@ public class Square {
             this.square = square;
         }
         
-        public T get() {
-            return this.square;
+        public Piece get() {
+            return this.piece;
         }
         
-        public void set(T square) {
-            this.square = square;
+        public void set(Piece piece) {
+            this.piece = piece;
         }
+        
+        // public T get() {
+        //     return this.square;
+        // }
+        //
+        // public void set(T square) {
+        //     this.square = square;
+        // }
         
         public boolean isEmpty() {
             return this.piece == null;
