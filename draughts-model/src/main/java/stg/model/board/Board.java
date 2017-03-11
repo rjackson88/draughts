@@ -6,7 +6,8 @@ import stg.model.piece.Piece;
  * Created by rickjackson on 3/10/17.
  */
 public class Board {
-    private Square[][] board = new Square[8][8];
+    private Square[][] gameBoard = new Square[8][8];
+    private int[] board = new int[32];
     private int positionFrom = 0;
     private int positionTo;
     private int whiteCount;
@@ -16,20 +17,20 @@ public class Board {
         constructBoardSquares();
     }
     
-    public Board(int[][] board) {
+    public Board(int[][] gameBoard) {
         constructBoardSquares();
     }
     
-    public Board(Square[][] board) {
-        this.board = board;
+    public Board(Square[][] gameBoard) {
+        this.gameBoard = gameBoard;
     }
     
-    public Board(int[] board) {
+    public Board(int[] gameBoard) {
         constructBoardSquares();
     }
     
     public int[] toArray() {
-        return null;
+        return board;
     }
     
     public void setFromArray() {
@@ -45,15 +46,15 @@ public class Board {
             for (int j = 0; j < 8; j++) {
                 if (isEven(i)) {
                     if (isEven(j)) {
-                        board[i][j] = new Square(i, j, SquareColor.LIGHT);
+                        gameBoard[i][j] = new Square(i, j, SquareColor.LIGHT);
                     } else {
-                        board[i][j] = new Square(i, j, SquareColor.DARK);
+                        gameBoard[i][j] = new Square(i, j, SquareColor.DARK);
                     }
                 } else {
                     if (isEven(j)) {
-                        board[i][j] = new Square(i, j, SquareColor.DARK);
+                        gameBoard[i][j] = new Square(i, j, SquareColor.DARK);
                     } else {
-                        board[i][j] = new Square(i, j, SquareColor.LIGHT);
+                        gameBoard[i][j] = new Square(i, j, SquareColor.LIGHT);
                     }
                 }
             }
