@@ -336,7 +336,7 @@ public class Piece {
             }
         }
         
-        public int[] getAvailableMoves(boolean mustJump) {
+        public List<Integer> getAvailableMoves(boolean mustJump) {
             List<Integer> moves = new ArrayList<>(4);
             
             if (Math.abs(piece.value()) == 2) {
@@ -347,12 +347,7 @@ public class Piece {
             } else {
                 moves.addAll(getDirectionMoves(mustJump, Direction.DOWN));
             }
-            int[] res = new int[moves.size()];
-            
-            for (int i = 0; i < moves.size(); i++) {
-                res[i] = moves.get(i);
-            }
-            return res;
+            return moves;
         }
     }
 }

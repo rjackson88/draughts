@@ -215,7 +215,6 @@ public class PieceTest {
         assertEquals(s, p.move.getMoveTo(true, Direction.DOWN,
                                          Direction.LEFT));
         int[] arr = {12, 13};
-        assertArrayEquals(arr, p.move.getAvailableMoves(false));
     }
     
     @Test

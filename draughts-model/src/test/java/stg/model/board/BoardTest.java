@@ -3,6 +3,9 @@ package stg.model.board;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import stg.model.piece.PieceColor;
+
+import java.util.List;
 
 /**
  * Created by rickjackson on 3/10/17.
@@ -56,5 +59,10 @@ public class BoardTest {
     @Test
     public void squareAtIndex12IsEmpty() {
         assertTrue(board.isEmpty(12));
+    }
+    
+    @Test
+    public void getAllPossibleMovers() {
+        List<Integer> movers = board.getAllPossibleMovers(PieceColor.BLACK);
     }
 }

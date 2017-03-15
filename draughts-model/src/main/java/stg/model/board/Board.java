@@ -3,6 +3,7 @@ package stg.model.board;
 import stg.model.piece.Piece;
 import stg.model.piece.PieceColor;
 
+import javax.persistence.criteria.CriteriaBuilder.In;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,6 +18,7 @@ public class Board {
     private int positionTo = -1;
     private int whiteCount = 0;
     private int blackCount = 0;
+    private boolean mustJump = false;
     
     public Board() {
         constructNewGameBoard();
@@ -139,16 +141,16 @@ public class Board {
         return getSquare(i).isEmpty();
     }
     
-    public List<Integer> getAllPossibleMoves(PieceColor color) {
-        boolean mustJump = mustJumpThisRound(color);
+    public List<Integer> getAllPossibleMovers(PieceColor color) {
+        mustJumpThisRound(color);
         int[] board = getBoard();
         List<Integer> movers = new ArrayList<>(32);
         
         for (int i = 0; i < 32; i++) {
-            if (board[i] != 0) {
+            if (board[i] != 0 && getSquare(i).getPiece()
+                                             .getColor().equals(color)) {
                 if (getSquare(i).getPiece().move
-                        .getAvailableMoves(mustJump)
-                        .length != 0) {
+                            .getAvailableMoves(mustJump).size() != 0) {
                     movers.add(i);
                 }
             }
@@ -157,51 +159,25 @@ public class Board {
     }
     
     public boolean mustJumpThisRound(PieceColor color) {
+        mustJump = false;
         int[] board = getBoard();
         
         for (int i = 0; i < 32; i++) {
-            if (board[i] != 0) {
+            if (board[i] != 0 && getSquare(i).getPiece().getColor()
+                                             .equals(color)) {
                 if (getSquare(i).getPiece().move.mustJump()) {
-                    return true;
+                    mustJump = true;
                 }
             }
         }
-        return false;
+        return mustJump;
     }
     
-    // public int[][] availableUpSimpleMoves() {
-    //     List<List<Integer>> moves = new ArrayList<>();
-    //
-    //     for (int i = 7; i > -1; i++) {
-    //         for (int j = 7; j > -1; j++) {
-    //             if (Square.isValidSquare(i-1, j-1)
-    //                 && getSquare(i-1, j-1).isEmpty()) {
-    //                 moves.add(moves.size()-1, );
-    //             }
-    //
-    //
-    //         }
-    //     }
-    // }
-    //
-    // public int[][] blackJumpMoves() {
-    //     List<List<Integer>> moves = new ArrayList<>();
-    //
-    //     for (int i = 7; i > -1; i++) {
-    //         for (int j = 7; j > -1; j++) {
-    //
-    //         }
-    //     }
-    // }
-    //
-    // public int[] validJumpMove(int fromRow, int fromCol, int toRow, int toCol) {
-    //     if (Math.abs(fromRow - toRow) == 2) {
-    //         if ()
-    //     }
-    // }
-    //
-    // public int[] validUpJumpMove(int fromRow, int fromCol, int toRow,
-    //                              int toCol) {
-    //     int[] moves =
-    // }
+    public Piece getPiece(int index) {
+        return getSquare(index).getPiece();
+    }
+    
+    public List<Integer> getAllMovesForPiece(int index) {
+        return getPiece(index).move.getAvailableMoves(mustJump);
+    }
 }
