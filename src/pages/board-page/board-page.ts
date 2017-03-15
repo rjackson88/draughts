@@ -1,8 +1,12 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { MoveService } from '../../services/move-service';
 import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { DragulaService} from "../../../node_modules/ng2-dragula/ng2-dragula"
+
+
+
 
 /*
   Generated class for the BoardPage page.
@@ -12,19 +16,39 @@ import 'rxjs/add/operator/map';
 */
 @Component({
   selector: 'page-board-page',
-  templateUrl: 'board-page.html'
+ templateUrl: 'board-page.html',
+ providers: [DragulaService]
+  
 })
 export class BoardPage {
 
   checkersBoard : jsonInterface = new jsonInterface(new startingBoard);
   
        
-  constructor( public navCtrl: NavController, public navParams: NavParams, public moveService: MoveService, public http: Http) {
+  constructor(private alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams, public moveService: MoveService, public http: Http, private DragulaService: DragulaService) {
  
 }
 
-  startGame(){
- this.http.get("http://localhost:8080/newGame").
+loadAlert() {
+  let alert = this.alertCtrl.create({
+    title: 'Game Loaded',
+    subTitle: 'Game state successfully loaded!',
+    buttons: ['Dismiss']
+  });
+  alert.present();
+}
+
+saveAlert() {
+  let alert = this.alertCtrl.create({
+    title: 'Game Saved!',
+    subTitle: 'Game state successfully saved',
+    buttons: ['Dismiss']
+  });
+  alert.present();
+}
+
+  newGame(){
+ this.http.get("https://evening-earth-96180.herokuapp.com/newGame").
  subscribe(res =>{ this.checkersBoard = new jsonInterface(res.json()); console.log(this.checkersBoard)})
 
   
@@ -32,58 +56,90 @@ export class BoardPage {
 
   isValid(position: number){
 
-    if(this.checkersBoard.board[position] == 0)
+    if(this.checkersBoard.board[position] <= 0 && this.checkersBoard.board[position] != -3)
     return false;
     else
     return true;
   }
 
+  loadGame(){
+    this.http.get("https://evening-earth-96180.herokuapp.com/load").subscribe(res => {this.checkersBoard = new jsonInterface(res.json()); this.loadAlert()})
+  }
+
+saveGame(){
+
+  this.http.put("https://evening-earth-96180.herokuapp.com/save",this.checkersBoard).subscribe(res=>{console.log(res); this.saveAlert()})
+}
 
 fetchMoveService(){
-       this.http.post("http://localhost:8080/movePiece", this.checkersBoard ).subscribe(res => {this.checkersBoard
+       this.http.post("https://evening-earth-96180.herokuapp.com/movePiece", this.checkersBoard ).subscribe(res => {this.checkersBoard
        = new jsonInterface(res.json()); console.log(this.checkersBoard)})
         };
 
   populatePosition(piece: number) : string{
       if(piece == 1){
-        return '../../assets/BlackRealistic.png'
+        return '/assets/BlackRealistic.png'
 
       }
       else if(piece == -1){
 
-        return '../../assets/RedRealistic.png'
+        return '/assets/RedRealistic.png'
       }
-      else if(piece == 3){
+      else if(piece == -3){
 
-        return '../../assets/transparency.png'
+        return '/assets/transparency.png'
       }
 
       else if(piece == 0){
-        return '../../assets/clear.png'
+        return '/assets/clear.png'
       }
 
-     else return ' '
+     else if(piece == 2){
+       return '/assets/BlackRealisticKing.png'
+     }
+
+     else if(piece == -2){
+       return '/assets/RedRealisticKing.png'
+     }
   }
+
+
 
   moveSelection(position:number){
 
-      if(this.checkersBoard.positionFrom == 0){
-      this.checkersBoard.positionFrom = position;
-      this.http.post("http://localhost:8080/checkMoves", this.checkersBoard).subscribe(
+    //position 0
+    if(this.checkersBoard.positionFrom == 0 && position == 0){
+
+      if(this.checkersBoard.board[4] == -3 || this.checkersBoard.blackPieceCount[5] == -3){
+         this.http.post("https://evening-earth-96180.herokuapp.com/clearMoves", this.checkersBoard).subscribe(
+        res => {this.checkersBoard = new jsonInterface(res.json());}
+        )
+      }
+     else
+      this.http.post("https://evening-earth-96180.herokuapp.com/checkMoves", this.checkersBoard).subscribe(
         res => {this.checkersBoard = new jsonInterface(res.json())}
       )
     }
 
-    else if(this.checkersBoard.positionFrom == position){
+
+      //chceck possible moves
+      else if( (this.checkersBoard.positionFrom != position && this.checkersBoard.board[position] >= 0 )){
+      this.checkersBoard.positionFrom = position;
+      this.http.post("https://evening-earth-96180.herokuapp.com/checkMoves", this.checkersBoard).subscribe(
+        res => {this.checkersBoard = new jsonInterface(res.json())}
+      )
+    }
+    //clear shown moves
+    else if((this.checkersBoard.positionFrom == position && this.checkersBoard.board[position] >= 0)){
           this.checkersBoard.positionFrom = 0;
-           this.http.post("http://localhost:8080/clearMoves", this.checkersBoard).subscribe(
+           this.http.post("https://evening-earth-96180.herokuapp.com/clearMoves", this.checkersBoard).subscribe(
         res => {this.checkersBoard = new jsonInterface(res.json());}
         )
     }
-
-    else if(this.checkersBoard.board[position] == 3){
+    //move piece to selected position
+    else if(this.checkersBoard.board[position] == -3){
       this.checkersBoard.positionTo = position;
-      this.http.post("http://localhost:8080/movePiece", this.checkersBoard).subscribe(
+      this.http.post("https://evening-earth-96180.herokuapp.com/movePiece", this.checkersBoard).subscribe(
         res => {this.checkersBoard = new jsonInterface(res.json()); console.log(this.checkersBoard)}
         )
 
@@ -121,9 +177,11 @@ export class startingBoard {
        whitePieceCount: number;
        whiteWinner: boolean;
        blackWinner: boolean;
-       id: number;
+       id: number = 1;
 
 }
+
+
 
 
 
