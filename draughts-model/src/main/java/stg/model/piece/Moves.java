@@ -27,68 +27,68 @@ public class Moves {
     //         }
     //     }
     // }
-    
-    public static boolean isJump(int from, int to) {
-        int rowFrom = Square.getRowFromIndex(from);
-        int rowTo = Square.getRowFromIndex(to);
-        return Math.abs(rowFrom - rowTo) == 2;
-    }
-    
-    
-    public static void move(Square square, MoveType type,
-                            Direction upDown, Direction leftRight) {
-        Piece p = square.getPiece();
-        
-        if (type.equals(MoveType.SIMPLE)) {
-            simpleMove(square, type, upDown, leftRight);
-        } else if (type.equals(MoveType.JUMP)) {
-            jumpMove(square, type, upDown, leftRight);
-        }
-    }
-    
-    public static void simpleMove(Square square, MoveType type,
-                                  Direction upDown, Direction leftRight) {
-        Piece p = square.getPiece();
-        square.removePiece();
-        square = square.getSquare(upDown.value(), leftRight.value());
-        square.placePiece(p);
-    }
-    
-    public static void jumpMove(Square square, MoveType type,
-                                Direction upDown, Direction leftRight) {
-        Piece p = square.getPiece();
-        square.removePiece();
-        square = square.getSquare(upDown.value(), leftRight.value());
-        square.getPiece().capture();
-        square = square.getSquare(upDown.value(), leftRight.value());
-        square.placePiece(p);
-    }
-    
-    public static Direction[] getDirection(int from, int to) {
-        Direction[] d = new Direction[2];
-        
-        if (difference(from, to) < 0) {
-            return d;
-        } else {
-            return d;
-        }
-    }
-    
-    private static MoveType getMoveType(int from, int to) {
-        return Math.abs(to - from) > 5 ? MoveType.JUMP : MoveType.SIMPLE;
-    }
-    
-    private static int difference(int from, int to) {
-        return to - from;
-    }
-    
-    private static boolean rowIsEven(int row) {
-        return row % 2 == 0;
-    }
-    
-    
-    
-    
+    //
+    // public static boolean isJump(int from, int to) {
+    //     int rowFrom = Square.getRowFromIndex(from);
+    //     int rowTo = Square.getRowFromIndex(to);
+    //     return Math.abs(rowFrom - rowTo) == 2;
+    // }
+    //
+    //
+    // public static void move(Square square, MoveType type,
+    //                         Direction upDown, Direction leftRight) {
+    //     Piece p = square.getPiece();
+    //
+    //     if (type.equals(MoveType.SIMPLE)) {
+    //         simpleMove(square, type, upDown, leftRight);
+    //     } else if (type.equals(MoveType.JUMP)) {
+    //         jumpMove(square, type, upDown, leftRight);
+    //     }
+    // }
+    //
+    // public static void simpleMove(Square square, MoveType type,
+    //                               Direction upDown, Direction leftRight) {
+    //     Piece p = square.getPiece();
+    //     square.removePiece();
+    //     square = square.getSquare(upDown.value(), leftRight.value());
+    //     square.placePiece(p);
+    // }
+    //
+    // public static void jumpMove(Square square, MoveType type,
+    //                             Direction upDown, Direction leftRight) {
+    //     Piece p = square.getPiece();
+    //     square.removePiece();
+    //     square = square.getSquare(upDown.value(), leftRight.value());
+    //     square.getPiece().capture();
+    //     square = square.getSquare(upDown.value(), leftRight.value());
+    //     square.placePiece(p);
+    // }
+    //
+    // public static Direction[] getDirection(int from, int to) {
+    //     Direction[] d = new Direction[2];
+    //
+    //     if (difference(from, to) < 0) {
+    //         return d;
+    //     } else {
+    //         return d;
+    //     }
+    // }
+    //
+    // private static MoveType getMoveType(int from, int to) {
+    //     return Math.abs(to - from) > 5 ? MoveType.JUMP : MoveType.SIMPLE;
+    // }
+    //
+    // private static int difference(int from, int to) {
+    //     return to - from;
+    // }
+    //
+    // private static boolean rowIsEven(int row) {
+    //     return row % 2 == 0;
+    // }
+    //
+    //
+    //
+    //
     // public static int getIndex(Square square) {
     //     return square == null ? -1 : square.index();
     // }

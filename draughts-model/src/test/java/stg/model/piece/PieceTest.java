@@ -17,9 +17,9 @@ public class PieceTest {
     private Piece empty;
     private Piece whiteMan;
     private Piece blackKing;
-    private Board board;
     private Piece piece;
     private Piece moveCheck;
+    private Board board;
     
     @Before
     public void setup() {
@@ -30,6 +30,18 @@ public class PieceTest {
         this.piece = this.board.getSquare(0).getPiece();
         this.moveCheck = this.board.getSquare(23).getPiece();
     }
+    
+    @Test
+    public void getSquareTest() {
+        
+    }
+    
+    
+    
+    
+    
+    
+    
     
     @Test
     public void getPieceColor() {
@@ -202,19 +214,6 @@ public class PieceTest {
     
     @Test
     public void mustJumpTest() {
-        int[] a = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-                   0, 0, 0, -1, 0, 0, 0, 0,
-                   -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
-        Board b = new Board(a);
-        Piece p = b.getSquare(11).getPiece();
-        Square s = b.getSquare(18);
-        assertEquals(MoveType.JUMP, p.move.moveType(Direction.DOWN,
-                                                    Direction.LEFT));
-        assertTrue(p.move.mustJump());
-        assertFalse(b.getSquare(0).getPiece().move.mustJump());
-        assertEquals(s, p.move.getMoveTo(true, Direction.DOWN,
-                                         Direction.LEFT));
-        int[] arr = {12, 13};
     }
     
     @Test

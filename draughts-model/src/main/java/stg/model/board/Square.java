@@ -1,6 +1,7 @@
 package stg.model.board;
 
 import stg.model.piece.Piece;
+import stg.model.piece.PieceColor;
 
 /**
  * Created by rickjackson on 3/10/17.
@@ -119,7 +120,24 @@ public class Square {
     }
     
     public boolean isKingsRow() {
-        return getRow() == 0 || getRow() == 7;
+        return isBlackKingsRow() || isWhiteKingsRow();
+    }
+    
+    public boolean isBlackKingsRow() {
+        return getRow() == 0;
+    }
+    
+    public boolean isWhiteKingsRow() {
+        return getRow() == 7;
+    }
+    
+    public void kingPiece() {
+        if ((getPiece().getColor().equals(PieceColor.BLACK)
+                && isBlackKingsRow())
+            || (getPiece().getColor().equals(PieceColor.WHITE)
+                && isWhiteKingsRow())) {
+            getPiece().king();
+        }
     }
     
     // Static Operations

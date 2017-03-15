@@ -107,6 +107,12 @@ public class Piece {
         return type.equals(PieceType.KING);
     }
     
+    public void king() {
+        if (Math.abs(value()) < 2) {
+            setProperties(value() * 2);
+        }
+    }
+    
     public boolean isCaptured() {
         return color.equals(PieceColor.EMPTY) && type.equals(PieceType.EMPTY);
     }
@@ -224,6 +230,7 @@ public class Piece {
             Square simple = piece.move.getTarget(piece.getSquare(), upDown,
                                                  leftRight);
             piece.move.to(simple);
+            simple.kingPiece();
         }
         
         public void jump(Direction upDown, Direction leftRight) {
@@ -232,6 +239,7 @@ public class Piece {
             Square jump = piece.move.getTarget(simple, upDown, leftRight);
             piece.move.capture(simple);
             piece.move.to(jump);
+            jump.kingPiece();
         }
         
         public void capture(Square jumped) {
@@ -248,23 +256,6 @@ public class Piece {
         
         public boolean isNotSameColor(Square square) {
             return !(piece.getColor().equals(square.getPiece().getColor()));
-        }
-        
-        public Square getSimpleMoveTarget(Direction upDown,
-                                          Direction leftRight) {
-            if (upDown.equals(Direction.UP)) {
-                if (leftRight.equals(Direction.LEFT)) {
-                    return piece.getSquare().upLeft();
-                } else {
-                    return piece.getSquare().upRight();
-                }
-            } else {
-                if (leftRight.equals(Direction.LEFT)) {
-                    return piece.getSquare().downLeft();
-                } else {
-                    return piece.getSquare().downRight();
-                }
-            }
         }
         
         public Outcome checkMoveTo(Square target) {
@@ -294,22 +285,6 @@ public class Piece {
                     return square.downRight();
                 }
             }
-        }
-        
-        public int getTargetIndex(Square target) {
-            return target == null ? -1 : target.index();
-        }
-        
-        public boolean isValid(Square target) {
-            return target != null && target.isEmpty();
-        }
-        
-        public boolean checkJump(Square simple) {
-            return checkMoveTo(simple).equals(Outcome.OTHER);
-        }
-        
-        public boolean canJumpTo(Square jump) {
-            return checkMoveTo(jump).equals(Outcome.EMPTY);
         }
         
         public MoveType moveType(Direction upDown, Direction leftRight) {
@@ -418,14 +393,6 @@ public class Piece {
                 moves.addAll(getDirectionMoves(mustJump, Direction.DOWN));
             }
             return moves;
-        }
-        
-        private boolean upMove(int to) {
-            return to - piece.atIndex() < 0;
-        }
-        
-        private boolean colIsEven() {
-            return piece.getSquare().getCol() % 2 == 0;
         }
         
         private boolean rowIsEven() {

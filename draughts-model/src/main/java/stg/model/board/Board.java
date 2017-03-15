@@ -11,7 +11,6 @@ import java.util.List;
  * Created by rickjackson on 3/10/17.
  */
 public class Board {
-    // Node<Square> square;
     Square[][] gameBoard = new Square[8][8];
     private int[] board = new int[32];
     private int positionFrom = -1;
@@ -50,31 +49,31 @@ public class Board {
         return a;
     }
     
-    private int[] defaultBoardArray() {
+    public int[] defaultBoardArray() {
         int[] a = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
                    0, 0, 0, 0, 0, 0, 0, 0,
                    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
         return a;
     }
     
-    private Square[] newRow(Square square, int start) {
-        Square[] s = blankSquareRow();
-        
-        for (int i = start; i < 8; i += 2) {
-            s[i] = square;
-        }
-        return s;
-    }
-    
-    private Square[] newRow(Square square, Piece piece, int start) {
-        Square[] s = blankSquareRow();
-        
-        for (int i = start; i < 8; i += 2) {
-            s[i] = square;
-            s[i].placePiece(piece);
-        }
-        return s;
-    }
+    // private Square[] newRow(Square square, int start) {
+    //     Square[] s = blankSquareRow();
+    //
+    //     for (int i = start; i < 8; i += 2) {
+    //         s[i] = square;
+    //     }
+    //     return s;
+    // }
+    //
+    // private Square[] newRow(Square square, Piece piece, int start) {
+    //     Square[] s = blankSquareRow();
+    //
+    //     for (int i = start; i < 8; i += 2) {
+    //         s[i] = square;
+    //         s[i].placePiece(piece);
+    //     }
+    //     return s;
+    // }
     
     // Game States
     
@@ -115,6 +114,7 @@ public class Board {
     
     public void setBoard(int[] board) {
         this.board = board;
+        setGameBoard(placePieces(board));
     }
     
     public Square[][] getGameBoard() {
@@ -123,6 +123,7 @@ public class Board {
     
     public void setGameBoard(Square[][] gameBoard) {
         this.gameBoard = gameBoard;
+        getBoard();
     }
     
     public Square getSquare(int[] i) {
