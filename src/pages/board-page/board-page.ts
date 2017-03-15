@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { MoveService } from '../../services/move-service';
 import { Http, Headers } from '@angular/http';
-import { ScreenOrientation } from 'ionic-native';
 import 'rxjs/add/operator/map';
 import { DragulaService} from "../../../node_modules/ng2-dragula/ng2-dragula"
 
@@ -147,9 +146,7 @@ fetchMoveService(){
     }
   }
 
-  ionViewLoaded() {
-    ScreenOrientation.lockOrientation('portrait');
-  }
+ 
 
 }
 
