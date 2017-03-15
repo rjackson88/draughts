@@ -2,7 +2,7 @@
 	"name": "STG FullStackCheckers",
 	"description": "A Full Stack Checkers Game",
 	"repository": "https://github.com/Ryan-Gross1993/NewFrontEnd",
-	"logo": "https://github.com/Ryan-Gross1993/NewFrontEnd/tree/master/src/assets/icon/favicon.ico",
+	"logo": "https://github.com/Ryan-Gross1993/NewFrontEnd/tree/PrestonTestBranch/src/assets/icon/favicon.ico",
 	"keywords": ["Checkers"]
 
 }
