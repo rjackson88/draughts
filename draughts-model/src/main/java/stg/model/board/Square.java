@@ -6,12 +6,26 @@ import stg.model.piece.Piece;
  * Created by rickjackson on 3/10/17.
  */
 public class Square {
-    Node<Square> square;
+    private Board board = null;
+    private Piece piece = null;
     private int[] coordinates = new int[2];
     private SquareColor color;
     
     public Square() {
         
+    }
+    
+    public Square(Board board, int row, int col, Piece piece) {
+        this.board = board;
+        this.coordinates[0] = row;
+        this.coordinates[1] = col;
+        this.piece = piece;
+    }
+    
+    public Square(Board board, int row, int col) {
+        this(row, col);
+        this.board = board;
+        this.color = SquareColor.DARK;
     }
     
     public Square(int row, int col) {
@@ -25,38 +39,52 @@ public class Square {
         this.color = color;
     }
     
-    public Square getSquare() {
-        return this.square.square;
+    // Query Operations
+    
+    public int value() {
+        return piece == null ? 0 : piece.value();
+    }
+    
+    public Board getBoard() {
+        return board;
+    }
+    
+    public void setBoard(Board board) {
+        this.board = board;
+    }
+    
+    public Piece getPiece() {
+        return piece;
+    }
+    
+    public void setPiece(Piece piece) {
+        this.piece = piece;
+    }
+    
+    public void placePiece(Piece piece) {
+        setPiece(piece);
+        getPiece().setSquare(this);
+    }
+    
+    public void removePiece() {
+        piece = null;
+    }
+    
+    public boolean isEmpty() {
+        return getPiece().value() == 0;
+    }
+    
+    public int index() {
+        return (getRow() * 4) + (getCol() / 2);
     }
     
     public int[] getCoordinates() {
         return coordinates;
     }
     
-    public void getCoordinates(int row, int col) {
+    public void setCoordinates(int row, int col) {
         coordinates[0] = row;
         coordinates[1] = col;
-    }
-    
-    public int[] getCoordinatesFromIndex(int index) {
-        int[] c = new int[2];
-        c[0] = getRowFromIndex(index);
-        c[1] = getColFromIndex(index);
-        return c;
-    }
-    
-    public int getRowFromIndex(int index) {
-        return index / 4;
-    }
-    
-    public int getColFromIndex(int index) {
-        int r = getRowFromIndex(index);
-        int tmp =  index - r * 4;
-        return isOdd(r) ? tmp * 2 : tmp * 2 + 1;
-    }
-    
-    public int index() {
-        return (getRow() * 4) + (getCol() / 2);
     }
     
     public int getRow() {
@@ -83,48 +111,98 @@ public class Square {
         this.color = color;
     }
     
-    boolean isOdd(int n) {
+    public boolean isKingsRow() {
+        return getRow() == 0 || getRow() == 7;
+    }
+    
+    // Static Operations
+    
+    public static boolean containsSameColor(Square s1, Square s2) {
+        return s1.getPiece().getColor().equals(s2.getPiece().getColor());
+    }
+    
+    public static int[] getCoordinatesFromIndex(int index) {
+        int[] c = new int[2];
+        c[0] = getRowFromIndex(index);
+        c[1] = getColFromIndex(index);
+        return c;
+    }
+    
+    public static int getRowFromIndex(int index) {
+        return index / 4;
+    }
+    
+    public static int getColFromIndex(int index) {
+        int r = getRowFromIndex(index);
+        int tmp =  index - r * 4;
+        return isOdd(r) ? tmp * 2 : tmp * 2 + 1;
+    }
+    
+    static boolean isOdd(int n) {
         return n % 2 != 0;
     }
     
-    boolean isModFour(int n) {
+    static boolean isModFour(int n) {
         return n % 4 == 0;
     }
     
-    private static class Node<T extends Square> {
-        Piece piece;
-        T square;
-        T upLeft;
-        T upRight;
-        T downRight;
-        T downLeft;
-        
-        Node() {
-            
-        }
-        
-        Node(T square) {
-            this.square = square;
-        }
-        
-        public Piece get() {
-            return this.piece;
-        }
-        
-        public void set(Piece piece) {
-            this.piece = piece;
-        }
-        
-        // public T get() {
-        //     return this.square;
-        // }
-        //
-        // public void set(T square) {
-        //     this.square = square;
-        // }
-        
-        public boolean isEmpty() {
-            return this.piece == null;
-        }
+    // Adjacent Squares
+    
+    public int squareIndex(Square square) {
+        return square == null ? -1 : square.index();
+    }
+    
+    public Square upLeft() {
+        return getSquare(up(), left());
+    }
+    
+    public Square upRight() {
+        return getSquare(up(), right());
+    }
+    
+    public Square downLeft() {
+        return getSquare(down(), left());
+    }
+    
+    public Square downRight() {
+        return getSquare(down(), right());
+    }
+    
+    public int up() {
+        return getRow() - 1;
+    }
+    
+    public int down() {
+        return getRow() + 1;
+    }
+    
+    public int left() {
+        return getCol() - 1;
+    }
+    
+    public int right() {
+        return getCol() + 1;
+    }
+    
+    public Square getSquare(int i, int j) {
+        return isValidSquare(i, j) ? getBoard().getSquare(i, j) : null;
+    }
+    
+    Square getSquare(int index) {
+        int[] c = Square.getCoordinatesFromIndex(index);
+        return isValidSquare(c[0], c[1]) ? getBoard().getSquare(index) : null;
+    }
+    
+    private static boolean isValidSquare(int i, int j) {
+        return isValid(i) && isValid(j);
+    }
+    
+    public static boolean isValidSquare(int index) {
+        int[] c = Square.getCoordinatesFromIndex(index);
+        return isValidSquare(c[0], c[1]);
+    }
+    
+    private static boolean isValid(int i) {
+        return i >= 0 && i <= 7;
     }
 }

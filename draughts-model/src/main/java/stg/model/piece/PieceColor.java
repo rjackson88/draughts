@@ -31,4 +31,8 @@ public enum PieceColor {
     public int getValue() {
         return ordinal() - 1;
     }
+    
+    public PieceColor getColor(int i) {
+        return ENUMS[i + 1];
+    }
 }

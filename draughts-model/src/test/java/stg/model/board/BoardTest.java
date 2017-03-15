@@ -16,12 +16,45 @@ public class BoardTest {
     }
     
     @Test
-    public void setOnlyBoardIndexToArray() {
-        
+    public void blankIntRowTest() {
+        int[] r = {0, 0, 0, 0, 0, 0, 0, 0};
+        assertArrayEquals(r, board.blankIntRow());
     }
     
     @Test
-    public void is8Even() {
-        
+    public void blankSquareRowTest() {
+        Square[] s = {null, null, null, null, null, null, null, null};
+        assertArrayEquals(s, board.blankSquareRow());
+    }
+    
+    @Test
+    public void blankBoardArrayTest() {
+        int[] a = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        assertArrayEquals(a, board.blankBoardArray());
+    }
+    
+    @Test
+    public void getSquareFromDefaultGameBoard() {
+        assertNotNull(board.getSquare(0, 1));
+    }
+    
+    @Test
+    public void getBoardFromDefaultState() {
+        int[] b = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                   0, 0, 0, 0, 0, 0, 0, 0,
+                   -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+        assertArrayEquals(b, board.getBoard());
+    }
+    
+    
+    @Test
+    public void squareAtIndex0IsNotEmpty() {
+        assertFalse(board.isEmpty(0));
+    }
+    
+    @Test
+    public void squareAtIndex12IsEmpty() {
+        assertTrue(board.isEmpty(12));
     }
 }

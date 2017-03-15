@@ -3,6 +3,7 @@ package stg.model.board;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import stg.model.piece.Piece;
 
 /**
  * Created by rickjackson on 3/10/17.
@@ -18,199 +19,135 @@ public class SquareTest {
     }
     
     @Test
-    public void getSquare1Coordinates() {
+    public void valueOfSquare1() {
+        assertEquals(0, square1.value());
+    }
+    
+    @Test
+    public void getBoard() {
+        assertNull(square1.getBoard());
+    }
+    
+    @Test
+    public void setBoard() {
+        square1.setBoard(new Board());
+        assertNotNull(square1.getBoard());
+    }
+    
+    @Test
+    public void getPieceOnSquare1() {
+        assertNull(square1.getPiece());
+    }
+    
+    @Test
+    public void setPieceOnSquare2() {
+        assertNull(square2.getPiece());
+        square2.setPiece(new Piece(2));
+        assertNotNull(square2.getPiece());
+    }
+    
+    @Test
+    public void placePieceOnSquare1() {
+        assertNull(square1.getPiece());
+        square1.placePiece(new Piece(-2));
+        assertNotNull(square1.getPiece());
+    }
+    
+    @Test
+    public void removePieceOnSquare1() {
+        square1.placePiece(new Piece());
+        square1.removePiece();
+        assertNull(square1.getPiece());
+    }
+    
+    @Test
+    public void indexForSquare1() {
+        assertEquals(0, square1.index());
+    }
+    
+    @Test
+    public void indexForSquare2() {
+        assertEquals(31, square2.index());
+    }
+    
+    @Test
+    public void getCoordinatesForSquare1() {
         int[] i = {0, 1};
         assertArrayEquals(i, square1.getCoordinates());
     }
     
     @Test
-    public void getSquare2Coordinates() {
-        int[] i = {7, 6};
-        assertArrayEquals(i, square2.getCoordinates());
+    public void setCoordinatesForSquare2ToSquare1() {
+        square2.setCoordinates(0, 1);
+        assertArrayEquals(square1.getCoordinates(), square2.getCoordinates());
     }
     
     @Test
-    public void setCoordinatesFromSquareIndex7() {
-        int[] i = {1, 6};
-        assertArrayEquals(i, square1.getCoordinatesFromIndex(7));
-    }
-    
-    @Test
-    public void setCoordinatesFromSquareIndex31() {
-        int[] i = {7, 6};
-        assertArrayEquals(i, square1.getCoordinatesFromIndex(31));
-    }
-    
-    @Test
-    public void getRowFromIndex0() {
-        assertEquals(0, square1.getRowFromIndex(0));
-    }
-    
-    @Test
-    public void getRowFromIndex3() {
-        assertEquals(0, square1.getRowFromIndex(3));
-    }
-    
-    @Test
-    public void getRowFromIndex4() {
-        assertEquals(1, square1.getRowFromIndex(4));
-    }
-    
-    @Test
-    public void getRowFromIndex8() {
-        assertEquals(2, square1.getRowFromIndex(8));
-    }
-    
-    @Test
-    public void getRowFromIndex10() {
-        assertEquals(2, square1.getRowFromIndex(10));
-    }
-    
-    @Test
-    public void getRowFromIndex15() {
-        assertEquals(3, square1.getRowFromIndex(15));
-    }
-    
-    @Test
-    public void getRowFromIndex19() {
-        assertEquals(4, square1.getRowFromIndex(19));
-    }
-    
-    @Test
-    public void getRowFromIndex20() {
-        assertEquals(5, square1.getRowFromIndex(20));
-    }
-    
-    @Test
-    public void getRowFromIndex32() {
-        assertEquals(7, square1.getRowFromIndex(31));
-    }
-    
-    @Test
-    public void getColFromIndex0() {
-        assertEquals(1, square2.getColFromIndex(0));
-    }
-    
-    @Test
-    public void getColFromIndex3() {
-        assertEquals(7, square2.getColFromIndex(3));
-    }
-    
-    @Test
-    public void getColFromIndex4() {
-        assertEquals(0, square2.getColFromIndex(4));
-    }
-    
-    @Test
-    public void getColFromIndex12() {
-        assertEquals(0, square2.getColFromIndex(12));
-    }
-    
-    @Test
-    public void getColFromIndex15() {
-        assertEquals(6, square2.getColFromIndex(15));
-    }
-    
-    @Test
-    public void getColFromIndex24() {
-        assertEquals(1, square2.getColFromIndex(24));
-    }
-    
-    @Test
-    public void getColFromIndex31() {
-        assertEquals(6, square2.getColFromIndex(31));
-    }
-    
-    @Test
-    public void is9Odd() {
-        assertTrue(square1.isOdd(31));
-    }
-    
-    @Test
-    public void is24Odd() {
-        assertFalse(square1.isOdd(24));
-    }
-    
-    @Test
-    public void is0Odd() {
-        assertFalse(square1.isOdd(0));
-    }
-    
-    @Test
-    public void is8ModFour() {
-        assertTrue(square1.isModFour(8));
-    }
-    
-    @Test
-    public void is18ModFour() {
-        assertFalse(square1.isModFour(18));
-    }
-    
-    @Test
-    public void getSquare1Row() {
+    public void getRowForSquare1() {
         assertEquals(0, square1.getRow());
     }
     
     @Test
-    public void getSquare1Col() {
+    public void setRowForSquare1() {
+        square1.setRow(1);
+        assertEquals(1, square1);
+    }
+    
+    @Test
+    public void getColForSquare1() {
         assertEquals(1, square1.getCol());
     }
     
     @Test
-    public void square0Index() {
-        assertEquals(0, square1.index());
+    public void setColForSquare1() {
+        square1.setCol(0);
+        assertEquals(0, square1.getCol());
     }
     
     @Test
-    public void square1Index() {
-        Square s = new Square(0, 3);
-        assertEquals(1, s.index());
+    public void getColorForSquare1() {
+        assertEquals(SquareColor.DARK, square1.getColor());
     }
     
     @Test
-    public void square2Index() {
-        Square s = new Square(0, 5);
-        assertEquals(2, s.index());
+    public void setColorForSquare1() {
+        square1.setColor(SquareColor.LIGHT);
+        assertEquals(SquareColor.LIGHT, square1.getColor());
     }
     
     @Test
-    public void square3Index() {
-        Square s = new Square(0, 7);
-        assertEquals(3, s.index());
+    public void isSquare1InKingsRow() {
+        assertTrue(square1.isKingsRow());
     }
     
     @Test
-    public void square4Index() {
-        Square s = new Square(1, 0);
-        assertEquals(4, s.index());
+    public void isSquare2InKingsRow() {
+        assertTrue(square2.isKingsRow());
     }
     
     @Test
-    public void square7Index() {
-        Square s = new Square(1, 6);
-        assertEquals(7, s.index());
+    public void getCoordinatesFromIndex() {
+        int[] i = {0, 1};
+        assertArrayEquals(i, Square.getCoordinatesFromIndex(0));
     }
     
     @Test
-    public void square11Index() {
-        Square s = new Square(2, 7);
-        assertEquals(11, s.index());
+    public void getRowFromIndex() {
+        assertEquals(0, Square.getRowFromIndex(0));
     }
     
     @Test
-    public void square16Index() {
-        Square s = new Square(4, 1);
-        assertEquals(16, s.index());
+    public void getColFromIndex() {
+        assertEquals(1, Square.getColFromIndex(0));
     }
     
     @Test
-    public void square31Index() {
-        Square s = new Square(7, 6);
-        assertEquals(31, s.index());
+    public void tenIsOdd() {
+        assertTrue(Square.isOdd(1));
     }
     
     @Test
-    public void getSquare1Color() {
-        assertEquals(SquareColor.DARK, square2.getColor());
+    public void sixteenIsModulo4() {
+        assertTrue(Square.isModFour(16));
     }
 }

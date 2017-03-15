@@ -2,8 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e90044f1-b932-4c51-87a3-b2d980ade0ff" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/draughts-model/src/main/java/stg/model/game/Game.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/draughts-model/src/main/java/stg/model/piece/Direction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/draughts-model/src/main/java/stg/model/piece/MoveType.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/draughts-model/src/main/java/stg/model/piece/Moves.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/draughts-model/src/main/java/stg/model/piece/Outcome.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/draughts-model/src/main/java/stg/model/piece/Move.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/draughts-model/src/main/java/stg/model/board/Board.java" afterPath="$PROJECT_DIR$/draughts-model/src/main/java/stg/model/board/Board.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/draughts-model/src/main/java/stg/model/board/Square.java" afterPath="$PROJECT_DIR$/draughts-model/src/main/java/stg/model/board/Square.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/draughts-model/src/main/java/stg/model/piece/Piece.java" afterPath="$PROJECT_DIR$/draughts-model/src/main/java/stg/model/piece/Piece.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/draughts-model/src/main/java/stg/model/piece/PieceColor.java" afterPath="$PROJECT_DIR$/draughts-model/src/main/java/stg/model/piece/PieceColor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/draughts-model/src/test/java/stg/DraughtsModelApplicationTests.java" afterPath="$PROJECT_DIR$/draughts-model/src/test/java/stg/DraughtsModelApplicationTests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/draughts-model/src/test/java/stg/model/board/BoardTest.java" afterPath="$PROJECT_DIR$/draughts-model/src/test/java/stg/model/board/BoardTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/draughts-model/src/test/java/stg/model/board/SquareTest.java" afterPath="$PROJECT_DIR$/draughts-model/src/test/java/stg/model/board/SquareTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/draughts-model/src/test/java/stg/model/piece/PieceTest.java" afterPath="$PROJECT_DIR$/draughts-model/src/test/java/stg/model/piece/PieceTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/draughts-model/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,82 +31,90 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SquareTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/draughts-model/src/test/java/stg/model/board/SquareTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="34" column="62" lean-forward="false" selection-start-line="34" selection-start-column="62" selection-end-line="34" selection-end-column="62" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2858#2859#0" expanded="true" />
-                <element signature="e#2903#2904#0" expanded="true" />
-                <element signature="e#2946#2947#0" expanded="true" />
-                <element signature="e#2992#2993#0" expanded="true" />
-                <element signature="e#3034#3035#0" expanded="true" />
-                <element signature="e#3079#3080#0" expanded="true" />
-                <element signature="e#3125#3126#0" expanded="true" />
-                <element signature="e#3173#3174#0" expanded="true" />
-                <element signature="e#3220#3221#0" expanded="true" />
-                <element signature="e#3270#3271#0" expanded="true" />
-                <element signature="e#3319#3320#0" expanded="true" />
-                <element signature="e#3368#3369#0" expanded="true" />
-                <element signature="e#3417#3418#0" expanded="true" />
-                <element signature="e#3466#3467#0" expanded="true" />
-                <element signature="e#3514#3515#0" expanded="true" />
-                <element signature="e#3562#3563#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Square.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/draughts-model/src/main/java/stg/model/board/Square.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1380">
-              <caret line="110" column="24" lean-forward="false" selection-start-line="110" selection-start-column="24" selection-end-line="110" selection-end-column="24" />
+            <state relative-caret-position="698">
+              <caret line="204" column="19" lean-forward="false" selection-start-line="204" selection-start-column="19" selection-end-line="204" selection-end-column="19" />
               <folding>
-                <element signature="e#1065#1066#0" expanded="true" />
-                <element signature="e#1097#1098#0" expanded="true" />
-                <element signature="e#1305#1306#0" expanded="true" />
-                <element signature="e#1359#1360#0" expanded="true" />
-                <element signature="e#1841#1842#0" expanded="true" />
-                <element signature="e#1874#1875#0" expanded="true" />
-                <element signature="e#1910#1911#0" expanded="true" />
-                <element signature="e#1943#1944#0" expanded="true" />
-                <element signature="e#2280#2281#0" expanded="true" />
-                <element signature="e#2321#2322#0" expanded="true" />
-                <element signature="e#2369#2370#0" expanded="true" />
-                <element signature="e#2411#2412#0" expanded="true" />
+                <element signature="e#1557#1558#0" expanded="true" />
+                <element signature="e#1603#1604#0" expanded="true" />
+                <element signature="e#2373#2374#0" expanded="true" />
+                <element signature="e#2426#2427#0" expanded="true" />
+                <element signature="e#3399#3400#0" expanded="true" />
+                <element signature="e#3445#3446#0" expanded="true" />
+                <element signature="e#3480#3481#0" expanded="true" />
+                <element signature="e#3527#3528#0" expanded="true" />
+                <element signature="e#3563#3564#0" expanded="true" />
+                <element signature="e#3611#3612#0" expanded="true" />
+                <element signature="e#3648#3649#0" expanded="true" />
+                <element signature="e#3697#3698#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Board.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Piece.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/draughts-model/src/main/java/stg/model/piece/Piece.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="99">
+              <caret line="131" column="9" lean-forward="false" selection-start-line="131" selection-start-column="9" selection-end-line="131" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#666#667#0" expanded="true" />
+                <element signature="e#702#703#0" expanded="true" />
+                <element signature="e#838#839#0" expanded="true" />
+                <element signature="e#883#884#0" expanded="true" />
+                <element signature="e#2898#2899#0" expanded="true" />
+                <element signature="e#2940#2941#0" expanded="true" />
+                <element signature="e#2989#2990#0" expanded="true" />
+                <element signature="e#3024#3025#0" expanded="true" />
+                <element signature="e#3235#3236#0" expanded="true" />
+                <element signature="e#3282#3283#0" expanded="true" />
+                <element signature="e#3606#3607#0" expanded="true" />
+                <element signature="e#3642#3643#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Moves.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/draughts-model/src/main/java/stg/model/piece/Moves.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="28" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2468#2469#0" expanded="true" />
+                <element signature="e#2500#2501#0" expanded="true" />
+                <element signature="e#2553#2554#0" expanded="true" />
+                <element signature="e#2588#2589#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MoveType.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/draughts-model/src/main/java/stg/model/piece/MoveType.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+              <folding>
+                <element signature="e#194#195#0" expanded="true" />
+                <element signature="e#228#229#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Board.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/draughts-model/src/main/java/stg/model/board/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="36" column="8" lean-forward="true" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
+            <state relative-caret-position="728">
+              <caret line="156" column="24" lean-forward="true" selection-start-line="156" selection-start-column="24" selection-end-line="156" selection-end-column="24" />
               <folding>
-                <element signature="e#608#609#0" expanded="true" />
-                <element signature="e#647#648#0" expanded="true" />
-                <element signature="e#681#682#0" expanded="true" />
-                <element signature="e#709#710#0" expanded="true" />
-                <element signature="e#2716#2717#0" expanded="true" />
-                <element signature="e#2757#2758#0" expanded="true" />
-                <element signature="e#2805#2806#0" expanded="true" />
-                <element signature="e#2847#2848#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Game.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/draughts-model/src/main/java/stg/model/game/Game.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="4" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -104,8 +124,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -130,20 +150,27 @@
         <option value="$PROJECT_DIR$/draughts-model/src/main/java/stg/model/piece/Class.java" />
         <option value="$PROJECT_DIR$/draughts-model/src/main/java/stg/model/piece/Color.java" />
         <option value="$PROJECT_DIR$/draughts-model/src/main/java/stg/model/piece/PieceClass.java" />
-        <option value="$PROJECT_DIR$/draughts-model/src/main/java/stg/model/piece/PieceColor.java" />
         <option value="$PROJECT_DIR$/draughts-model/src/test/java/stg/model/piece/PieceColor.java" />
         <option value="$PROJECT_DIR$/draughts-model/src/main/java/stg/model/piece/PieceType.java" />
         <option value="$PROJECT_DIR$/draughts-model/src/test/java/stg/model/piece/PieceColorTest.java" />
         <option value="$PROJECT_DIR$/draughts-model/src/test/java/stg/model/piece/PieceTypeTest.java" />
-        <option value="$PROJECT_DIR$/draughts-model/src/main/java/stg/model/piece/Piece.java" />
-        <option value="$PROJECT_DIR$/draughts-model/src/test/java/stg/model/piece/PieceTest.java" />
         <option value="$PROJECT_DIR$/draughts-model/src/main/java/stg/model/board/SquareColor.java" />
         <option value="$PROJECT_DIR$/draughts-model/src/test/java/stg/model/board/SquareColorTest.java" />
-        <option value="$PROJECT_DIR$/draughts-model/src/test/java/stg/model/board/BoardTest.java" />
-        <option value="$PROJECT_DIR$/draughts-model/src/main/java/stg/model/board/Square.java" />
-        <option value="$PROJECT_DIR$/draughts-model/src/test/java/stg/model/board/SquareTest.java" />
-        <option value="$PROJECT_DIR$/draughts-model/src/main/java/stg/model/board/Board.java" />
         <option value="$PROJECT_DIR$/draughts-model/src/main/java/stg/model/game/Game.java" />
+        <option value="$PROJECT_DIR$/draughts-model/src/main/java/stg/model/piece/PieceColor.java" />
+        <option value="$PROJECT_DIR$/draughts-model/src/test/java/stg/DraughtsModelApplicationTests.java" />
+        <option value="$PROJECT_DIR$/draughts-model/src/main/java/stg/model/piece/Move.java" />
+        <option value="$PROJECT_DIR$/draughts-model/src/main/java/stg/model/board/Testing.java" />
+        <option value="$PROJECT_DIR$/draughts-model/src/test/java/stg/model/board/SquareTest.java" />
+        <option value="$PROJECT_DIR$/draughts-model/src/test/java/stg/model/piece/PieceTest.java" />
+        <option value="$PROJECT_DIR$/draughts-model/src/test/java/stg/model/board/BoardTest.java" />
+        <option value="$PROJECT_DIR$/draughts-model/src/main/java/stg/model/piece/MoveType.java" />
+        <option value="$PROJECT_DIR$/draughts-model/src/main/java/stg/model/piece/Outcome.java" />
+        <option value="$PROJECT_DIR$/draughts-model/src/main/java/stg/model/piece/Direction.java" />
+        <option value="$PROJECT_DIR$/draughts-model/src/main/java/stg/model/piece/Piece.java" />
+        <option value="$PROJECT_DIR$/draughts-model/src/main/java/stg/model/piece/Moves.java" />
+        <option value="$PROJECT_DIR$/draughts-model/src/main/java/stg/model/board/Square.java" />
+        <option value="$PROJECT_DIR$/draughts-model/src/main/java/stg/model/board/Board.java" />
       </list>
     </option>
   </component>
@@ -506,20 +533,20 @@
       <recent name="stg.model.board" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SquareTest.setCoordinatesFromSquareIndex7">
-    <configuration default="false" name="SquareTest.getColFromIndex15" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.BoardTest.getBoardFromDefaultState">
+    <configuration default="false" name="PieceTest.capturePiece" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="stg.model.board.*" />
+          <option name="PATTERN" value="stg.model.piece.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="draughts-model" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="stg.model.board" />
-      <option name="MAIN_CLASS_NAME" value="stg.model.board.SquareTest" />
-      <option name="METHOD_NAME" value="getColFromIndex15" />
+      <option name="PACKAGE_NAME" value="stg.model.piece" />
+      <option name="MAIN_CLASS_NAME" value="stg.model.piece.PieceTest" />
+      <option name="METHOD_NAME" value="capturePiece" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -533,19 +560,19 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="SquareTest.getColFromIndex24" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="PieceTest.isEmptyWithSquareParam" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="stg.model.board.*" />
+          <option name="PATTERN" value="stg.model.piece.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="draughts-model" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="stg.model.board" />
-      <option name="MAIN_CLASS_NAME" value="stg.model.board.SquareTest" />
-      <option name="METHOD_NAME" value="getColFromIndex24" />
+      <option name="PACKAGE_NAME" value="stg.model.piece" />
+      <option name="MAIN_CLASS_NAME" value="stg.model.piece.PieceTest" />
+      <option name="METHOD_NAME" value="isEmptyWithSquareParam" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -559,7 +586,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="SquareTest.getColFromIndex31" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="BoardTest.isSquareEmptyByIndex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="stg.model.board.*" />
@@ -570,8 +597,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="stg.model.board" />
-      <option name="MAIN_CLASS_NAME" value="stg.model.board.SquareTest" />
-      <option name="METHOD_NAME" value="getColFromIndex31" />
+      <option name="MAIN_CLASS_NAME" value="stg.model.board.BoardTest" />
+      <option name="METHOD_NAME" value="isSquareEmptyByIndex" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -585,7 +612,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="SquareTest.setCoordinatesFromSquareIndex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="BoardTest.squareAtIndex12IsEmpty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="stg.model.board.*" />
@@ -596,8 +623,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="stg.model.board" />
-      <option name="MAIN_CLASS_NAME" value="stg.model.board.SquareTest" />
-      <option name="METHOD_NAME" value="setCoordinatesFromSquareIndex" />
+      <option name="MAIN_CLASS_NAME" value="stg.model.board.BoardTest" />
+      <option name="METHOD_NAME" value="squareAtIndex12IsEmpty" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -611,7 +638,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="SquareTest.setCoordinatesFromSquareIndex7" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="BoardTest.getBoardFromDefaultState" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="stg.model.board.*" />
@@ -622,8 +649,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="stg.model.board" />
-      <option name="MAIN_CLASS_NAME" value="stg.model.board.SquareTest" />
-      <option name="METHOD_NAME" value="setCoordinatesFromSquareIndex7" />
+      <option name="MAIN_CLASS_NAME" value="stg.model.board.BoardTest" />
+      <option name="METHOD_NAME" value="getBoardFromDefaultState" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1029,19 +1056,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Spring Boot.DraughtsModelApplication" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.SquareTest.getColFromIndex15" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.SquareTest.getColFromIndex24" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.SquareTest.getColFromIndex31" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.SquareTest.setCoordinatesFromSquareIndex" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.SquareTest.setCoordinatesFromSquareIndex7" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.PieceTest.capturePiece" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.PieceTest.isEmptyWithSquareParam" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.BoardTest.isSquareEmptyByIndex" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.BoardTest.squareAtIndex12IsEmpty" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.BoardTest.getBoardFromDefaultState" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.SquareTest.setCoordinatesFromSquareIndex7" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.SquareTest.setCoordinatesFromSquareIndex" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.SquareTest.getColFromIndex31" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.SquareTest.getColFromIndex24" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.SquareTest.getColFromIndex15" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.BoardTest.getBoardFromDefaultState" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.BoardTest.squareAtIndex12IsEmpty" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.BoardTest.isSquareEmptyByIndex" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.PieceTest.isEmptyWithSquareParam" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.PieceTest.capturePiece" />
       </list>
     </recent_temporary>
   </component>
@@ -1055,48 +1082,48 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1489182003279</updated>
-      <workItem from="1489182004625" duration="37813000" />
+      <workItem from="1489182004625" duration="92155000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SquareTest_getColFromIndex12 - 2017.03.11 at 14h 28m 56s.xml">
-      <configuration name="SquareTest.getColFromIndex12" configurationId="JUnit" />
+    <history-entry file="BoardTest_getBoardFromDefaultState - 2017.03.13 at 17h 36m 21s.xml">
+      <configuration name="BoardTest.getBoardFromDefaultState" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SquareTest_getColFromIndex12 - 2017.03.11 at 14h 29m 14s.xml">
-      <configuration name="SquareTest.getColFromIndex12" configurationId="JUnit" />
+    <history-entry file="BoardTest_getSquareFromDefaultGameBoard - 2017.03.13 at 13h 01m 46s.xml">
+      <configuration name="BoardTest.getSquareFromDefaultGameBoard" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SquareTest_getColFromIndex15 - 2017.03.11 at 14h 29m 19s.xml">
-      <configuration name="SquareTest.getColFromIndex15" configurationId="JUnit" />
+    <history-entry file="BoardTest_getSquareFromDefaultGameBoard - 2017.03.13 at 13h 58m 44s.xml">
+      <configuration name="BoardTest.getSquareFromDefaultGameBoard" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SquareTest_getColFromIndex15 - 2017.03.11 at 14h 29m 30s.xml">
-      <configuration name="SquareTest.getColFromIndex15" configurationId="JUnit" />
+    <history-entry file="BoardTest_isSquareEmptyByIndex - 2017.03.13 at 16h 22m 00s.xml">
+      <configuration name="BoardTest.isSquareEmptyByIndex" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SquareTest_getColFromIndex24 - 2017.03.11 at 14h 29m 40s.xml">
-      <configuration name="SquareTest.getColFromIndex24" configurationId="JUnit" />
+    <history-entry file="BoardTest_newRowWithPieceTest - 2017.03.13 at 13h 59m 17s.xml">
+      <configuration name="BoardTest.newRowWithPieceTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SquareTest_getColFromIndex31 - 2017.03.11 at 14h 29m 58s.xml">
-      <configuration name="SquareTest.getColFromIndex31" configurationId="JUnit" />
+    <history-entry file="BoardTest_squareAtIndex12IsEmpty - 2017.03.13 at 16h 23m 14s.xml">
+      <configuration name="BoardTest.squareAtIndex12IsEmpty" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SquareTest_getColFromIndex4 - 2017.03.11 at 14h 28m 28s.xml">
-      <configuration name="SquareTest.getColFromIndex4" configurationId="JUnit" />
+    <history-entry file="PieceTest_capturePiece - 2017.03.13 at 16h 10m 07s.xml">
+      <configuration name="PieceTest.capturePiece" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SquareTest_getColFromIndex4 - 2017.03.11 at 14h 28m 52s.xml">
-      <configuration name="SquareTest.getColFromIndex4" configurationId="JUnit" />
+    <history-entry file="PieceTest_isEmptyWithSquareParam - 2017.03.13 at 16h 17m 47s.xml">
+      <configuration name="PieceTest.isEmptyWithSquareParam" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SquareTest_setCoordinatesFromSquareIndex - 2017.03.11 at 14h 30m 59s.xml">
-      <configuration name="SquareTest.setCoordinatesFromSquareIndex" configurationId="JUnit" />
+    <history-entry file="SquareTest_isSquare1InKingsRow - 2017.03.13 at 14h 28m 38s.xml">
+      <configuration name="SquareTest.isSquare1InKingsRow" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SquareTest_setCoordinatesFromSquareIndex7 - 2017.03.11 at 14h 32m 10s.xml">
-      <configuration name="SquareTest.setCoordinatesFromSquareIndex7" configurationId="JUnit" />
+    <history-entry file="SquareTest_isSquare2InKingsRow - 2017.03.13 at 14h 29m 03s.xml">
+      <configuration name="SquareTest.isSquare2InKingsRow" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37813000" />
+    <option name="totallyTimeSpent" value="92155000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="976" y="23" width="944" height="988" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -1115,10 +1142,10 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3275862" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3790186" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32988507" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988507" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24944568" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988507" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1130,6 +1157,39 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988507" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25747126" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988507" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24944568" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988507" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
@@ -1161,21 +1221,6 @@
         <state relative-caret-position="60">
           <caret line="4" column="3" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/draughts-model/src/main/java/stg/model/piece/PieceColor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="26" column="6" lean-forward="true" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
-          <folding>
-            <element signature="e#280#281#0" expanded="false" />
-            <element signature="e#318#319#0" expanded="false" />
-            <element signature="e#395#396#0" expanded="false" />
-            <element signature="e#433#434#0" expanded="false" />
-            <element signature="e#545#546#0" expanded="false" />
-            <element signature="e#581#582#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1215,67 +1260,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/draughts-model/src/main/java/stg/model/piece/Move.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="19" lean-forward="true" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/draughts-model/src/main/java/stg/model/piece/PieceType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" column="10" lean-forward="false" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/draughts-model/src/test/java/stg/model/piece/PieceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1410">
-          <caret line="94" column="5" lean-forward="false" selection-start-line="94" selection-start-column="5" selection-end-line="94" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#794#795#0" expanded="false" />
-            <element signature="e#840#841#0" expanded="false" />
-            <element signature="e#889#890#0" expanded="false" />
-            <element signature="e#939#940#0" expanded="false" />
-            <element signature="e#989#990#0" expanded="false" />
-            <element signature="e#1039#1040#0" expanded="false" />
-            <element signature="e#1088#1089#0" expanded="false" />
-            <element signature="e#1132#1133#0" expanded="false" />
-            <element signature="e#1182#1183#0" expanded="false" />
-            <element signature="e#1228#1229#0" expanded="false" />
-            <element signature="e#1278#1279#0" expanded="false" />
-            <element signature="e#1324#1325#0" expanded="false" />
-            <element signature="e#1375#1376#0" expanded="false" />
-            <element signature="e#1421#1422#0" expanded="false" />
-            <element signature="e#1472#1473#0" expanded="false" />
-            <element signature="e#1518#1519#0" expanded="false" />
-            <element signature="e#1572#1573#0" expanded="false" />
-            <element signature="e#1622#1623#0" expanded="false" />
-            <element signature="e#1924#1925#0" expanded="false" />
-            <element signature="e#1979#1980#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/draughts-model/src/main/java/stg/model/board/SquareColor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="25" lean-forward="false" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
-          <folding>
-            <element signature="e#166#167#0" expanded="false" />
-            <element signature="e#204#205#0" expanded="false" />
-            <element signature="e#280#281#0" expanded="false" />
-            <element signature="e#317#318#0" expanded="false" />
-            <element signature="e#357#358#0" expanded="false" />
-            <element signature="e#389#390#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/draughts-model/src/test/java/stg/model/board/SquareColorTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -1288,95 +1272,215 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/draughts-model/src/main/java/stg/model/piece/Piece.java">
+    <entry file="file://$PROJECT_DIR$/draughts-model/src/main/java/stg/model/game/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="683">
-          <caret line="70" column="22" lean-forward="false" selection-start-line="70" selection-start-column="22" selection-end-line="70" selection-end-column="22" />
+        <state relative-caret-position="45">
+          <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+          <folding>
+            <element signature="e#411#412#0" expanded="true" />
+            <element signature="e#436#437#0" expanded="true" />
+            <element signature="e#475#476#0" expanded="true" />
+            <element signature="e#503#504#0" expanded="true" />
+            <element signature="e#539#540#0" expanded="true" />
+            <element signature="e#567#568#0" expanded="true" />
+            <element signature="e#613#614#0" expanded="true" />
+            <element signature="e#647#648#0" expanded="true" />
+            <element signature="e#686#687#0" expanded="true" />
+            <element signature="e#719#720#0" expanded="true" />
+            <element signature="e#773#774#0" expanded="true" />
+            <element signature="e#817#818#0" expanded="true" />
+            <element signature="e#858#859#0" expanded="true" />
+            <element signature="e#893#894#0" expanded="true" />
+            <element signature="e#1043#1044#0" expanded="true" />
+            <element signature="e#1081#1082#0" expanded="true" />
+            <element signature="e#1243#1244#0" expanded="true" />
+            <element signature="e#1281#1282#0" expanded="true" />
+            <element signature="e#1442#1443#0" expanded="true" />
+            <element signature="e#1476#1477#0" expanded="true" />
+            <element signature="e#1625#1626#0" expanded="true" />
+            <element signature="e#1659#1660#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/draughts-model/src/main/java/stg/model/piece/PieceColor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="37" column="1" lean-forward="true" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
+          <folding>
+            <element signature="e#626#627#0" expanded="false" />
+            <element signature="e#661#662#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/draughts-model/src/test/java/stg/DraughtsModelApplicationTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/draughts-model/src/test/java/stg/model/board/BoardTest.java">
+    <entry file="file://$PROJECT_DIR$/draughts-model/src/main/java/stg/model/board/SquareColor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="8" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+        <state relative-caret-position="135">
+          <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#246#247#0" expanded="false" />
-            <element signature="e#286#287#0" expanded="false" />
+            <element signature="e#357#358#0" expanded="false" />
+            <element signature="e#389#390#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/draughts-model/src/main/java/stg/model/board/Testing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/draughts-model/src/main/java/stg/model/piece/PieceType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="21" column="10" lean-forward="false" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/draughts-model/src/test/java/stg/model/board/SquareTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="34" column="62" lean-forward="false" selection-start-line="34" selection-start-column="62" selection-end-line="34" selection-end-column="62" />
+        <state relative-caret-position="474">
+          <caret line="124" column="41" lean-forward="false" selection-start-line="124" selection-start-column="41" selection-end-line="124" selection-end-column="41" />
+          <folding>
+            <element signature="e#2723#2724#0" expanded="false" />
+            <element signature="e#2771#2772#0" expanded="false" />
+            <element signature="e#2826#2827#0" expanded="false" />
+            <element signature="e#2874#2875#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/draughts-model/src/test/java/stg/model/piece/PieceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="534">
+          <caret line="156" column="8" lean-forward="false" selection-start-line="156" selection-start-column="8" selection-end-line="156" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/draughts-model/src/test/java/stg/model/board/BoardTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="53" column="5" lean-forward="true" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+          <folding>
+            <element signature="e#1336#1337#0" expanded="false" />
+            <element signature="e#1381#1382#0" expanded="false" />
+            <element signature="e#1439#1440#0" expanded="false" />
+            <element signature="e#1484#1485#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/draughts-model/src/main/java/stg/model/piece/MoveType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+          <folding>
+            <element signature="e#194#195#0" expanded="true" />
+            <element signature="e#228#229#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/draughts-model/src/main/java/stg/model/piece/Outcome.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="9" lean-forward="true" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/draughts-model/src/main/java/stg/model/piece/Direction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="21" lean-forward="false" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+          <folding>
+            <element signature="e#227#228#0" expanded="false" />
+            <element signature="e#261#262#0" expanded="false" />
+            <element signature="e#291#292#0" expanded="false" />
+            <element signature="e#319#320#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/draughts-model/src/main/java/stg/model/piece/Piece.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="131" column="9" lean-forward="false" selection-start-line="131" selection-start-column="9" selection-end-line="131" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2858#2859#0" expanded="true" />
-            <element signature="e#2903#2904#0" expanded="true" />
-            <element signature="e#2946#2947#0" expanded="true" />
-            <element signature="e#2992#2993#0" expanded="true" />
-            <element signature="e#3034#3035#0" expanded="true" />
-            <element signature="e#3079#3080#0" expanded="true" />
-            <element signature="e#3125#3126#0" expanded="true" />
-            <element signature="e#3173#3174#0" expanded="true" />
-            <element signature="e#3220#3221#0" expanded="true" />
-            <element signature="e#3270#3271#0" expanded="true" />
-            <element signature="e#3319#3320#0" expanded="true" />
-            <element signature="e#3368#3369#0" expanded="true" />
-            <element signature="e#3417#3418#0" expanded="true" />
-            <element signature="e#3466#3467#0" expanded="true" />
-            <element signature="e#3514#3515#0" expanded="true" />
-            <element signature="e#3562#3563#0" expanded="true" />
+            <element signature="e#666#667#0" expanded="true" />
+            <element signature="e#702#703#0" expanded="true" />
+            <element signature="e#838#839#0" expanded="true" />
+            <element signature="e#883#884#0" expanded="true" />
+            <element signature="e#2898#2899#0" expanded="true" />
+            <element signature="e#2940#2941#0" expanded="true" />
+            <element signature="e#2989#2990#0" expanded="true" />
+            <element signature="e#3024#3025#0" expanded="true" />
+            <element signature="e#3235#3236#0" expanded="true" />
+            <element signature="e#3282#3283#0" expanded="true" />
+            <element signature="e#3606#3607#0" expanded="true" />
+            <element signature="e#3642#3643#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/draughts-model/src/main/java/stg/model/board/Square.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1380">
-          <caret line="110" column="24" lean-forward="false" selection-start-line="110" selection-start-column="24" selection-end-line="110" selection-end-column="24" />
+        <state relative-caret-position="698">
+          <caret line="204" column="19" lean-forward="false" selection-start-line="204" selection-start-column="19" selection-end-line="204" selection-end-column="19" />
           <folding>
-            <element signature="e#1065#1066#0" expanded="true" />
-            <element signature="e#1097#1098#0" expanded="true" />
-            <element signature="e#1305#1306#0" expanded="true" />
-            <element signature="e#1359#1360#0" expanded="true" />
-            <element signature="e#1841#1842#0" expanded="true" />
-            <element signature="e#1874#1875#0" expanded="true" />
-            <element signature="e#1910#1911#0" expanded="true" />
-            <element signature="e#1943#1944#0" expanded="true" />
-            <element signature="e#2280#2281#0" expanded="true" />
-            <element signature="e#2321#2322#0" expanded="true" />
-            <element signature="e#2369#2370#0" expanded="true" />
-            <element signature="e#2411#2412#0" expanded="true" />
+            <element signature="e#1557#1558#0" expanded="true" />
+            <element signature="e#1603#1604#0" expanded="true" />
+            <element signature="e#2373#2374#0" expanded="true" />
+            <element signature="e#2426#2427#0" expanded="true" />
+            <element signature="e#3399#3400#0" expanded="true" />
+            <element signature="e#3445#3446#0" expanded="true" />
+            <element signature="e#3480#3481#0" expanded="true" />
+            <element signature="e#3527#3528#0" expanded="true" />
+            <element signature="e#3563#3564#0" expanded="true" />
+            <element signature="e#3611#3612#0" expanded="true" />
+            <element signature="e#3648#3649#0" expanded="true" />
+            <element signature="e#3697#3698#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/draughts-model/src/main/java/stg/model/piece/Moves.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="28" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2468#2469#0" expanded="true" />
+            <element signature="e#2500#2501#0" expanded="true" />
+            <element signature="e#2553#2554#0" expanded="true" />
+            <element signature="e#2588#2589#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/draughts-model/src/main/java/stg/model/board/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="36" column="8" lean-forward="true" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
+        <state relative-caret-position="728">
+          <caret line="156" column="24" lean-forward="true" selection-start-line="156" selection-start-column="24" selection-end-line="156" selection-end-column="24" />
           <folding>
-            <element signature="e#608#609#0" expanded="true" />
-            <element signature="e#647#648#0" expanded="true" />
-            <element signature="e#681#682#0" expanded="true" />
-            <element signature="e#709#710#0" expanded="true" />
-            <element signature="e#2716#2717#0" expanded="true" />
-            <element signature="e#2757#2758#0" expanded="true" />
-            <element signature="e#2805#2806#0" expanded="true" />
-            <element signature="e#2847#2848#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/draughts-model/src/main/java/stg/model/game/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="4" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>

@@ -3,6 +3,8 @@ package stg.model.piece;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import stg.model.board.Board;
+import stg.model.board.Square;
 
 /**
  * Created by rickjackson on 3/10/17.
@@ -11,12 +13,16 @@ public class PieceTest {
     private Piece empty;
     private Piece whiteMan;
     private Piece blackKing;
+    private Board board;
+    private Piece piece;
     
     @Before
     public void setup() {
         this.empty = new Piece(PieceColor.EMPTY, PieceType.EMPTY);
         this.whiteMan = new Piece(PieceColor.WHITE, PieceType.MAN);
         this.blackKing = new Piece(PieceColor.BLACK, PieceType.KING);
+        this.board = new Board();
+        this.piece = this.board.getSquare(0).getPiece();
     }
     
     @Test
@@ -25,8 +31,45 @@ public class PieceTest {
     }
     
     @Test
+    public void setPieceColor() {
+        assertEquals(PieceColor.EMPTY, empty.getColor());
+        empty.setColor(PieceColor.BLACK);
+        assertEquals(PieceColor.BLACK, empty.getColor());
+    }
+    
+    @Test
+    public void setPieceColorWithInt() {
+        assertEquals(PieceColor.EMPTY, empty.getColor());
+        empty.setColor(1);
+        assertEquals(PieceColor.BLACK, empty.getColor());
+    }
+    
+    @Test
     public void getPieceType() {
         assertEquals(PieceType.KING, blackKing.getType());
+    }
+    
+    @Test
+    public void setPieceType() {
+        assertEquals(PieceType.EMPTY, empty.getType());
+        empty.setType(PieceType.KING);
+        assertEquals(PieceType.KING, empty.getType());
+    }
+    
+    @Test
+    public void setPieceTypeWithInt() {
+        assertEquals(PieceType.EMPTY, empty.getType());
+        empty.setType(2);
+        assertEquals(PieceType.KING, empty.getType());
+    }
+    
+    @Test
+    public void setPieceProperties() {
+        assertEquals(PieceColor.EMPTY, empty.getColor());
+        assertEquals(PieceType.EMPTY, empty.getType());
+        empty.setProperties(2);
+        assertEquals(PieceColor.BLACK, empty.getColor());
+        assertEquals(PieceType.KING, empty.getType());
     }
     
     @Test
@@ -75,6 +118,13 @@ public class PieceTest {
     }
     
     @Test
+    public void capturePiece() {
+        assertFalse(blackKing.isCaptured());
+        whiteMan.capture(blackKing);
+        assertTrue(blackKing.isCaptured());
+    }
+    
+    @Test
     public void whiteManAndBlackKingAreSameColor() {
         assertFalse(whiteMan.isSameColor(blackKing));
     }
@@ -92,5 +142,18 @@ public class PieceTest {
     @Test
     public void blackKingToString() {
         assertEquals("Black King", blackKing.toString());
+    }
+    
+    // Move Tests
+    
+    @Test
+    public void isEmptyWithSquareParam() {
+        Square sq = board.getSquare(0);
+        assertFalse(piece.move.isEmpty(sq));
+    }
+    
+    @Test
+    public void simpleMove() {
+        
     }
 }
