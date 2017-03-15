@@ -62,8 +62,15 @@ public class Square {
     }
     
     public void placePiece(Piece piece) {
-        setPiece(piece);
-        getPiece().setSquare(this);
+        if (piece.value() == 0) {
+            setPiece(null);
+        } else {
+            setPiece(piece);
+            
+            if (getPiece().getSquare() != this) {
+                getPiece().setSquare(this);
+            }
+        }
     }
     
     public void removePiece() {
@@ -71,7 +78,7 @@ public class Square {
     }
     
     public boolean isEmpty() {
-        return getPiece().value() == 0;
+        return value() == 0;
     }
     
     public int index() {
@@ -193,7 +200,7 @@ public class Square {
         return isValidSquare(c[0], c[1]) ? getBoard().getSquare(index) : null;
     }
     
-    private static boolean isValidSquare(int i, int j) {
+    public static boolean isValidSquare(int i, int j) {
         return isValid(i) && isValid(j);
     }
     

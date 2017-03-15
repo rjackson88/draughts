@@ -1,6 +1,7 @@
 package stg.model.board;
 
 import stg.model.piece.Piece;
+import stg.model.piece.PieceColor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -138,6 +139,51 @@ public class Board {
         return getSquare(i).isEmpty();
     }
     
+    public List<Integer> getAllPossibleMoves(PieceColor color) {
+        boolean mustJump = mustJumpThisRound(color);
+        int[] board = getBoard();
+        List<Integer> movers = new ArrayList<>(32);
+        
+        for (int i = 0; i < 32; i++) {
+            if (board[i] != 0) {
+                if (getSquare(i).getPiece().move
+                        .getAvailableMoves(mustJump)
+                        .length != 0) {
+                    movers.add(i);
+                }
+            }
+        }
+        return movers;
+    }
+    
+    public boolean mustJumpThisRound(PieceColor color) {
+        int[] board = getBoard();
+        
+        for (int i = 0; i < 32; i++) {
+            if (board[i] != 0) {
+                if (getSquare(i).getPiece().move.mustJump()) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    
+    // public int[][] availableUpSimpleMoves() {
+    //     List<List<Integer>> moves = new ArrayList<>();
+    //
+    //     for (int i = 7; i > -1; i++) {
+    //         for (int j = 7; j > -1; j++) {
+    //             if (Square.isValidSquare(i-1, j-1)
+    //                 && getSquare(i-1, j-1).isEmpty()) {
+    //                 moves.add(moves.size()-1, );
+    //             }
+    //
+    //
+    //         }
+    //     }
+    // }
+    //
     // public int[][] blackJumpMoves() {
     //     List<List<Integer>> moves = new ArrayList<>();
     //

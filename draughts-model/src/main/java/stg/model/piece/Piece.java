@@ -4,13 +4,14 @@ import stg.model.board.Board;
 import stg.model.board.Square;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
  * Created by rickjackson on 3/10/17.
  */
 public class Piece {
-    Move move = new Move(this);
+    public Move move = new Move(this);
     private Square square;
     private PieceColor color;
     private PieceType type;
@@ -33,15 +34,23 @@ public class Piece {
     }
     
     public void setSquare(Square square) {
+        if (getSquare() != null) {
+            getSquare().removePiece();
+        }
         this.square = square;
+        getSquare().placePiece(this);
     }
     
     public void setSquare(int index) {
-        this.square = getBoard().getSquare(index);
+        setSquare(getBoard().getSquare(index));
     }
     
     public Board getBoard() {
         return getSquare().getBoard();
+    }
+    
+    public int atIndex() {
+        return getSquare().index();
     }
     
     public PieceColor getColor() {
@@ -102,8 +111,9 @@ public class Piece {
         return color.equals(PieceColor.EMPTY) && type.equals(PieceType.EMPTY);
     }
     
-    public void capture(Piece piece) {
-        piece.setProperties(0);
+    public void capture() {
+        getSquare().removePiece();
+        setProperties(0);
     }
     
     public boolean isSameColor(Piece piece) {
@@ -124,21 +134,38 @@ public class Piece {
         return result;
     }
     
-    static class Move extends Moves {
+    public static class Move extends Moves {
         private Piece piece;
+        private boolean mustJump;
         
         public Move(Piece piece) {
             this.piece = piece;
         }
         
-        public int[] availableMoves() {
-            return null;
+        public void to(Square square) {
+            piece.setSquare(square);
         }
         
-        private int[] availableUpMoves() {
-            List<Integer> moves = new ArrayList<>(4);
-            
-            return null;
+        public void to(int index) {
+            piece.setSquare(piece.getBoard().getSquare(index));
+        }
+        
+        public void simple(Direction upDown, Direction leftRight) {
+            Square simple = piece.move.getTarget(piece.getSquare(), upDown,
+                                                 leftRight);
+            piece.move.to(simple);
+        }
+        
+        public void jump(Direction upDown, Direction leftRight) {
+            Square simple = piece.move.getTarget(piece.getSquare(), upDown,
+                                                 leftRight);
+            Square jump = piece.move.getTarget(simple, upDown, leftRight);
+            piece.move.capture(simple);
+            piece.move.to(jump);
+        }
+        
+        public void capture(Square jumped) {
+            jumped.getPiece().capture();
         }
         
         public boolean isEmpty(Square square) {
@@ -146,20 +173,186 @@ public class Piece {
         }
         
         public boolean isEmpty(int index) {
-            return piece.getBoard().isEmpty(index);
+            return piece.getBoard().getSquare(index).isEmpty();
         }
         
-        private boolean isNotSameColor(Square square) {
+        public boolean isNotSameColor(Square square) {
             return !(piece.getColor().equals(square.getPiece().getColor()));
         }
         
-        private boolean isValidSquare(int to) {
-            return false;
+        public Square getSimpleMoveTarget(Direction upDown,
+                                          Direction leftRight) {
+            if (upDown.equals(Direction.UP)) {
+                if (leftRight.equals(Direction.LEFT)) {
+                    return piece.getSquare().upLeft();
+                } else {
+                    return piece.getSquare().upRight();
+                }
+            } else {
+                if (leftRight.equals(Direction.LEFT)) {
+                    return piece.getSquare().downLeft();
+                } else {
+                    return piece.getSquare().downRight();
+                }
+            }
         }
         
-        public boolean isValid(int to) {
-            Square sq = piece.getBoard().getSquare(to);
-            return isEmpty(sq) && isNotSameColor(sq);
+        public Outcome checkMoveTo(Square target) {
+            if (target == null) {
+                return Outcome.INVALID;
+            } else if (target.isEmpty()) {
+                return Outcome.EMPTY;
+            } else if (target.getPiece().isSameColor(piece)) {
+                return Outcome.SAME;
+            } else {
+                return Outcome.OTHER;
+            }
+        }
+        
+        public Square getTarget(Square square, Direction upDown,
+                             Direction leftRight) {
+            if (upDown.equals(Direction.UP)) {
+                if (leftRight.equals(Direction.LEFT)) {
+                    return square.upLeft();
+                } else {
+                    return square.upRight();
+                }
+            } else {
+                if (leftRight.equals(Direction.LEFT)) {
+                    return square.downLeft();
+                } else {
+                    return square.downRight();
+                }
+            }
+        }
+        
+        public int getTargetIndex(Square target) {
+            return target == null ? -1 : target.index();
+        }
+        
+        public boolean isValid(Square target) {
+            return target != null && target.isEmpty();
+        }
+        
+        public boolean checkJump(Square simple) {
+            return checkMoveTo(simple).equals(Outcome.OTHER);
+        }
+        
+        public boolean canJumpTo(Square jump) {
+            return checkMoveTo(jump).equals(Outcome.EMPTY);
+        }
+        
+        public MoveType moveType(Direction upDown, Direction leftRight) {
+            Square simple = getTarget(piece.getSquare(), upDown, leftRight);
+            Square jump;
+            MoveType type = MoveType.NONE;
+            
+            switch (checkMoveTo(simple)) {
+                case INVALID:
+                case SAME:
+                    type = MoveType.NONE;
+                    break;
+                case EMPTY:
+                    type = MoveType.SIMPLE;
+                    break;
+                case OTHER:
+                    type = MoveType.JUMP;
+                    break;
+            }
+            if (type.equals(MoveType.JUMP)) {
+                jump = getTarget(simple, upDown, leftRight);
+                
+                if (checkMoveTo(jump).equals(Outcome.EMPTY)) {
+                    type = MoveType.JUMP;
+                } else {
+                    type = MoveType.NONE;
+                }
+            }
+            return type;
+        }
+        
+        public boolean mustJump() {
+            if (Math.abs(piece.value()) == 2) {
+                return moveType(Direction.UP, Direction.LEFT) == MoveType.JUMP
+                        || moveType(Direction.UP, Direction.RIGHT)
+                           == MoveType.JUMP
+                        || moveType(Direction.DOWN, Direction.LEFT)
+                           == MoveType.JUMP
+                        || moveType(Direction.DOWN, Direction.RIGHT)
+                           == MoveType.JUMP;
+            } else if (piece.value() < 0) {
+                return moveType(Direction.UP, Direction.LEFT) == MoveType.JUMP
+                        || moveType(Direction.UP, Direction.RIGHT)
+                           == MoveType.JUMP;
+            } else {
+                return moveType(Direction.DOWN, Direction.LEFT) == MoveType.JUMP
+                        || moveType(Direction.DOWN, Direction.RIGHT)
+                           == MoveType.JUMP;
+            }
+        }
+        
+        public Square getMoveTo(boolean mustJump, Direction upDown,
+                               Direction leftRight) {
+            Square target = getTarget(piece.getSquare(), upDown, leftRight);
+            
+            if (mustJump) {
+                if (checkMoveTo(target).equals(Outcome.OTHER)) {
+                    target = getTarget(target, upDown, leftRight);
+                    if (!checkMoveTo(target).equals(Outcome.EMPTY)) {
+                        target = null;
+                    }
+                } else {
+                    target = null;
+                }
+            } else {
+                if (!checkMoveTo(target).equals(Outcome.EMPTY)) {
+                    target = null;
+                }
+            }
+            return target;
+        }
+        
+        public List<Integer> getDirectionMoves(boolean mustJump,
+                                               Direction upDown) {
+            List<Integer> moves;
+            Square left = getMoveTo(mustJump, upDown, Direction.LEFT);
+            Square right = getMoveTo(mustJump, upDown, Direction.RIGHT);
+            
+            if (left == null && right == null) {
+                return new ArrayList<>(0);
+            } else if (left == null) {
+                moves = new ArrayList<>(1);
+                moves.add(right.index());
+                return moves;
+            } else if (right == null) {
+                moves = new ArrayList<>(1);
+                moves.add(left.index());
+                return moves;
+            } else {
+                moves = new ArrayList<>(2);
+                moves.add(left.index());
+                moves.add(right.index());
+                return moves;
+            }
+        }
+        
+        public int[] getAvailableMoves(boolean mustJump) {
+            List<Integer> moves = new ArrayList<>(4);
+            
+            if (Math.abs(piece.value()) == 2) {
+                moves.addAll(getDirectionMoves(mustJump, Direction.UP));
+                moves.addAll(getDirectionMoves(mustJump, Direction.DOWN));
+            } else if (piece.value() < 0) {
+                moves.addAll(getDirectionMoves(mustJump, Direction.UP));
+            } else {
+                moves.addAll(getDirectionMoves(mustJump, Direction.DOWN));
+            }
+            int[] res = new int[moves.size()];
+            
+            for (int i = 0; i < moves.size(); i++) {
+                res[i] = moves.get(i);
+            }
+            return res;
         }
     }
 }

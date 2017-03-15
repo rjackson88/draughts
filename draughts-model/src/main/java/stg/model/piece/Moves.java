@@ -59,7 +59,7 @@ public class Moves {
         Piece p = square.getPiece();
         square.removePiece();
         square = square.getSquare(upDown.value(), leftRight.value());
-        square.getPiece().capture(square.getPiece());
+        square.getPiece().capture();
         square = square.getSquare(upDown.value(), leftRight.value());
         square.placePiece(p);
     }
