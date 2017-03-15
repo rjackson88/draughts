@@ -3,6 +3,7 @@ import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 import { HomePage } from '../pages/home/home';
 import { BoardPage } from '../pages/board-page/board-page';
+import { ScreenOrientation } from 'ionic-native';
 @Component({
   templateUrl: 'app.html'
 })
@@ -16,5 +17,9 @@ export class MyApp {
       StatusBar.styleDefault();
       Splashscreen.hide();
     });
+  }
+
+   ionViewLoaded() {
+    ScreenOrientation.lockOrientation('portrait');
   }
 }
