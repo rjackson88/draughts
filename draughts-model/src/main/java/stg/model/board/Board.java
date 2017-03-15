@@ -177,6 +177,10 @@ public class Board {
         return getSquare(index).getPiece();
     }
     
+    public void movePiece(int from, int to) {
+        getPiece(from).move.move(to);
+    }
+    
     public List<Integer> getAllMovesForPiece(int index) {
         return getPiece(index).move.getAvailableMoves(mustJump);
     }

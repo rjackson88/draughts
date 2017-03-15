@@ -150,6 +150,76 @@ public class Piece {
             piece.setSquare(piece.getBoard().getSquare(index));
         }
         
+        public void move(int to) {
+            int i = piece.atIndex();
+            
+            if (i > to) {
+                if (i - to > 6) {
+                    jump(Direction.UP, getJumpLeftRight(to));
+                } else {
+                    simple(Direction.UP, getSimpleLeftRight(to));
+                }
+            } else {
+                if (to - i > 6) {
+                    jump(Direction.DOWN, getJumpLeftRight(to));
+                } else {
+                    simple(Direction.DOWN, getJumpLeftRight(to));
+                }
+            }
+        }
+        
+        private Direction getUpDown(int to) {
+            int i = piece.atIndex();
+            
+            if (i > to) {
+                return Direction.UP;
+            } else {
+                return Direction.DOWN;
+            }
+        }
+        
+        private Direction getSimpleLeftRight(int to) {
+            int i = piece.atIndex();
+            
+            if (rowIsEven()) {
+                if (i - to == 4) {
+                    return Direction.LEFT;
+                } else if (i - to == 3) {
+                    return Direction.RIGHT;
+                } else if (to - i == 4) {
+                    return Direction.LEFT;
+                } else if (to - i == 5) {
+                    return Direction.RIGHT;
+                }
+            } else {
+                if (i - to == 5) {
+                    return Direction.LEFT;
+                } else if (i - to == 4) {
+                    return Direction.RIGHT;
+                } else if (to - i == 3) {
+                    return Direction.LEFT;
+                } else if (to - i == 4) {
+                    return Direction.RIGHT;
+                }
+            }
+            return null;
+        }
+        
+        private Direction getJumpLeftRight(int to) {
+            int i = piece.atIndex();
+            
+            if (i - to == 9) {
+                return Direction.LEFT;
+            } else if (i - to == 7) {
+                return Direction.RIGHT;
+            } else if (to - i == 7) {
+                return Direction.LEFT;
+            } else if (to - i == 9) {
+                return Direction.RIGHT;
+            }
+            return null;
+        }
+        
         public void simple(Direction upDown, Direction leftRight) {
             Square simple = piece.move.getTarget(piece.getSquare(), upDown,
                                                  leftRight);
@@ -348,6 +418,18 @@ public class Piece {
                 moves.addAll(getDirectionMoves(mustJump, Direction.DOWN));
             }
             return moves;
+        }
+        
+        private boolean upMove(int to) {
+            return to - piece.atIndex() < 0;
+        }
+        
+        private boolean colIsEven() {
+            return piece.getSquare().getCol() % 2 == 0;
+        }
+        
+        private boolean rowIsEven() {
+            return piece.getSquare().getRow() % 2 == 0;
         }
     }
 }
