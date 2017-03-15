@@ -40,7 +40,7 @@
     background-color: transparent;
     height: 62.5px;
     width: 62.5px;
-     position:absolute;
+    position:absolute;
     top: 0%;
     left: 0%;
 
@@ -68,6 +68,14 @@
 
 .wrapper {
     text-align: center;
+    border:none;
+
+    .col {
+        border:none;
+        color:white;
+    }
+    
+
 }
 
 .button2:hover {background-color: #3e8e41}
@@ -105,4 +113,52 @@
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
   filter: alpha(opacity=20);
 }
+
+#center {
+    display: block;
+    margin: 0 auto;
+}
+
+#mobile-buttons {
+    list-style: none;
+    display:none;
+   
+}
+
+
+// RWD Media Queries
+
+
+@media only screen and (max-width: 768px) {
+
+    .grid {
+        width: 350px;
+        .row {
+        height: 42px;
+        width: 338px;
+    }
+    }
+
+    .wrapper {
+        display: none;
+    }
+
+    #mobile-buttons {
+        display: inline;
+       text-align:center;
+
+       .button2{ 
+           margin: 5px 0px 10px 0px;
+       }
+    }
+
+}
+
+   
+
+       
+       
+    
+
+
 

@@ -1,15 +1,9 @@
 
-<ion-header>
 
-  <ion-navbar>
-    <ion-title>BoardPage</ion-title>
-  </ion-navbar>
-
-</ion-header>
 
 <ion-content padding>
 
-
+<div id="center">
 <ion-grid class ='board'>
 
   <ion-row class ='row'>
@@ -218,10 +212,33 @@
   </ion-row>
 
 </ion-grid>
-<div class="wrapper">
-<button class='button2' on-click='newGame()'>New Game</button>
-<button class='button2' on-click='saveGame()'>Save Game</button>
-<button class='button2' on-click='loadGame()'>Load Game</button>
+
+  <ul id="mobile-buttons">
+  <li> <button class='button2' on-click='newGame()'>New Game</button> </li>
+  <li> <button class='button2' on-click='saveGame()'>Save Game</button> </li>
+  <li> <button class='button2' on-click='loadGame()'>Load Game</button> </li>
+  </ul>
 </div>
+
+
+<ion-grid class="wrapper">
+<ion-row responsive-sm>
+  <ion-col>
+    <button class='button2' on-click='newGame()'>New Game</button>
+  </ion-col>
+
+  <ion-col>
+  <button class='button2' on-click='saveGame()'>Save Game</button>
+  </ion-col>
+
+  <ion-col>
+  <button class='button2' on-click='loadGame()'>Load Game</button>
+  </ion-col>
+</ion-row>
+</ion-grid>
+
+
+
+
 </ion-content>
 

@@ -24558,6 +24558,12 @@ ion-navbar.toolbar {
 
 .wrapper {
   text-align: center;
+  border: none;
+}
+
+.wrapper .col {
+  border: none;
+  color: white;
 }
 
 .button2:hover {
@@ -24595,4 +24601,34 @@ ion-navbar.toolbar {
   opacity: 0.2;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
   filter: alpha(opacity=20);
+}
+
+#center {
+  display: block;
+  margin: 0 auto;
+}
+
+#mobile-buttons {
+  list-style: none;
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .grid {
+    width: 350px;
+  }
+  .grid .row {
+    height: 42px;
+    width: 338px;
+  }
+  .wrapper {
+    display: none;
+  }
+  #mobile-buttons {
+    display: inline;
+    text-align: center;
+  }
+  #mobile-buttons .button2 {
+    margin: 5px 0px 10px 0px;
+  }
 }
