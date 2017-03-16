@@ -4,7 +4,6 @@ import stg.model.board.Board;
 import stg.model.board.Square;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -32,7 +31,7 @@ public class Piece {
     public Square getSquare() {
         return square;
     }
-    
+
     public void setSquare(Square square) {
         if (getSquare() != null) {
             getSquare().removePiece();
@@ -40,7 +39,8 @@ public class Piece {
         this.square = square;
         getSquare().placePiece(this);
     }
-    
+
+
     public void setSquare(int index) {
         setSquare(getBoard().getSquare(index));
     }
@@ -56,11 +56,11 @@ public class Piece {
     public PieceColor getColor() {
         return color;
     }
-    
+
     public void setColor(PieceColor color) {
         this.color = color;
     }
-    
+
     public void setColor(int i) {
         this.color = PieceColor.values()[i + 1];
     }

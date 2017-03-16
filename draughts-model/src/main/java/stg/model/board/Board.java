@@ -24,9 +24,9 @@ public class Board {
         placePieces(defaultBoardArray());
     }
     
-    public Board(Square[][] gameBoard) {
-        this.gameBoard = gameBoard;
-    }
+//    public Board(Square[][] gameBoard) {
+//        this.gameBoard = gameBoard;
+//    }
     
     public Board(int[] board) {
         constructNewGameBoard();
@@ -184,5 +184,12 @@ public class Board {
     
     public List<Integer> getAllMovesForPiece(int index) {
         return getPiece(index).move.getAvailableMoves(mustJump);
+    }
+
+   static public void clearMoves(int[] board){
+        for(int i = 0; i < 32; i++) {
+            if (board[i] == -3)
+                board[i] = 0;
+        }
     }
 }
