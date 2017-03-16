@@ -207,9 +207,10 @@ public class Board {
     
     public void checkMoves() {
         List<Integer> moves = getAllMovesForPiece(positionFrom);
-        
+
         for (int i = 0; i < moves.size(); i++) {
-            board[i] = -3;
+            System.out.println(moves.get(i));
+            board[moves.get(i)] = -3;
         }
     }
     

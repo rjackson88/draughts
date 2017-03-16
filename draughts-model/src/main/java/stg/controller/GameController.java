@@ -31,5 +31,7 @@ public class GameController {
     @RequestMapping(value = "/checkMoves", method = RequestMethod.POST, consumes = {"application/json"}, produces = {"application/json"})
     public Board checkPossibleMoves(@RequestBody Board board){
 
+        board.checkMoves();
+        return board;
     }
 }
