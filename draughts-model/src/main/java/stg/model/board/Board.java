@@ -33,6 +33,38 @@ public class Board {
         placePieces(board);
     }
     
+    public int getPositionFrom() {
+        return positionFrom;
+    }
+    
+    public void setPositionFrom(int positionFrom) {
+        this.positionFrom = positionFrom;
+    }
+    
+    public int getPositionTo() {
+        return positionTo;
+    }
+    
+    public void setPositionTo(int positionTo) {
+        this.positionTo = positionTo;
+    }
+    
+    public int getWhiteCount() {
+        return whiteCount;
+    }
+    
+    public void setWhiteCount(int whiteCount) {
+        this.whiteCount = whiteCount;
+    }
+    
+    public int getBlackCount() {
+        return blackCount;
+    }
+    
+    public void setBlackCount(int blackCount) {
+        this.blackCount = blackCount;
+    }
+    
     int[] blankIntRow() {
         int[] r = {0, 0, 0, 0, 0, 0, 0, 0};
         return r;
