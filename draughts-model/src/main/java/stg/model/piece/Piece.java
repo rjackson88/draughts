@@ -179,7 +179,7 @@ public class Piece {
                 if (to - i > 6) {
                     jump(Direction.DOWN, getJumpLeftRight(to));
                 } else {
-                    simple(Direction.DOWN, getJumpLeftRight(to));
+                    simple(Direction.DOWN, getSimpleLeftRight(to));
                 }
             }
         }

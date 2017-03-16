@@ -166,4 +166,30 @@ public class Board {
     public List<Integer> getAllMovesForPiece(int index) {
         return getPiece(index).move.getAvailableMoves(mustJump);
     }
+
+    public Piece[] getAllPiecesOnGameboard() {
+        Piece[] pieces = new Piece[24];
+        int counter = 0;
+        for (int i = 0; i < 32; i++) {
+            if (getSquare(i).getPiece() == null)
+                continue;
+            pieces[counter++] = getSquare(i).getPiece();
+            }
+        return pieces;
+    }
+
+    public Board createPossibleBoardState(int positionFrom, int positionTo) {
+        Board boardCopy = new Board(this.board);
+        boardCopy.movePiece(positionFrom, positionTo);
+        return boardCopy;
+    }
+
+    public void setPositionFrom(int positionFrom) {
+        this.positionFrom = positionFrom;
+    }
+
+    public int getPositionFrom() {
+        return positionFrom;
+    }
+
 }
