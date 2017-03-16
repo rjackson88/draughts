@@ -28,61 +28,59 @@ public class Game {
         this.id = id;
     }
     
-    public int[] getB() {
+    public int[] getBoard() {
         return b.getBoard();
     }
     
-    public void setB(int[] board) {
+    public void setBoard(int[] board) {
         this.b = new Board(board);
     }
     
-    
-    
     public int getPositionTo() {
-        return positionTo;
+        return b.getPositionTo();
     }
     
     public void setPositionTo(int positionTo) {
-        this.positionTo = positionTo;
+        this.b.setPositionTo(positionTo);
     }
     
     public int getPositionFrom() {
-        return positionFrom;
+        return this.b.getPositionTo();
     }
     
     public void setPositionFrom(int positionFrom) {
-        this.positionFrom = positionFrom;
+        this.b.setPositionFrom(positionFrom);
     }
     
     public int getBlackPieceCount() {
-        return blackPieceCount;
+        return this.b.getBlackCount();
     }
     
     public void setBlackPieceCount(int blackPieceCount) {
-        this.blackPieceCount = blackPieceCount;
+        this.b.setBlackCount(blackPieceCount);
     }
     
     public int getWhitePieceCount() {
-        return whitePieceCount;
+        return this.b.getWhiteCount();
     }
     
     public void setWhitePieceCount(int whitePieceCount) {
-        this.whitePieceCount = whitePieceCount;
+        this.b.setWhiteCount(whitePieceCount);
     }
     
-    public boolean isWhiteWinner() {
-        return whiteWinner;
-    }
-    
-    public void setWhiteWinner(boolean whiteWinner) {
-        this.whiteWinner = whiteWinner;
-    }
-    
-    public boolean isBlackWinner() {
-        return blackWinner;
-    }
-    
-    public void setBlackWinner(boolean blackWinner) {
-        this.blackWinner = blackWinner;
-    }
+    // public boolean isWhiteWinner() {
+    //     return whiteWinner;
+    // }
+    //
+    // public void setWhiteWinner(boolean whiteWinner) {
+    //     this.whiteWinner = whiteWinner;
+    // }
+    //
+    // public boolean isBlackWinner() {
+    //     return blackWinner;
+    // }
+    //
+    // public void setBlackWinner(boolean blackWinner) {
+    //     this.blackWinner = blackWinner;
+    // }
 }

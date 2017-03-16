@@ -1,5 +1,6 @@
 package stg.model.board;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import stg.model.piece.Piece;
 import stg.model.piece.PieceColor;
 
@@ -11,7 +12,8 @@ import java.util.List;
  * Created by rickjackson on 3/10/17.
  */
 public class Board {
-    Square[][] gameBoard = new Square[8][8];
+    @JsonIgnore
+    private Square[][] gameBoard = new Square[8][8];
     private int[] board = new int[32];
     private int positionFrom = -1;
     private int positionTo = -1;
@@ -20,19 +22,49 @@ public class Board {
     private boolean mustJump = false;
     
     public Board() {
+        this.board = defaultBoardArray();
         constructNewGameBoard();
         placePieces(defaultBoardArray());
     }
-    
-    // public Board(Square[][] gameBoard) {
-    //     this.gameBoard = gameBoard;
-    // }
-    
+
     public Board(int[] board) {
+        this.board = board;
         constructNewGameBoard();
         placePieces(board);
     }
     
+    public int getPositionFrom() {
+        return positionFrom;
+    }
+
+    public void setPositionFrom(int positionFrom) {
+        this.positionFrom = positionFrom;
+    }
+
+    public int getPositionTo() {
+        return positionTo;
+    }
+
+    public void setPositionTo(int positionTo) {
+        this.positionTo = positionTo;
+    }
+
+    public int getWhiteCount() {
+        return whiteCount;
+    }
+
+    public void setWhiteCount(int whiteCount) {
+        this.whiteCount = whiteCount;
+    }
+
+    public int getBlackCount() {
+        return blackCount;
+    }
+
+    public void setBlackCount(int blackCount) {
+        this.blackCount = blackCount;
+    }
+
     int[] blankIntRow() {
         int[] r = {0, 0, 0, 0, 0, 0, 0, 0};
         return r;
@@ -163,8 +195,35 @@ public class Board {
         getPiece(from).move.move(to);
     }
     
+    public void movePiece() {
+        getPiece(positionFrom).move.move(positionTo);
+        clearPositions();
+    }
+
     public List<Integer> getAllMovesForPiece(int index) {
+        mustJumpThisRound(getSquare(index).getPiece().getColor());
         return getPiece(index).move.getAvailableMoves(mustJump);
+    }
+
+    public void checkMoves(int index) {
+        List<Integer> moves = getAllMovesForPiece(index);
+
+        for (int i = 0; i < moves.size(); i++) {
+            board[i] = -3;
+        }
+    }
+
+    public void clearMoves() {
+        for (int i = 0; i < 32; i++) {
+            if (board[i] == -3) {
+                board[i] = 0;
+            }
+        }
+    }
+
+    public void clearPositions() {
+        positionFrom = 0;
+        positionTo = 0;
     }
 
     public Piece[] getAllPiecesOnGameboard() {
@@ -182,18 +241,5 @@ public class Board {
         Board boardCopy = new Board(this.board);
         boardCopy.movePiece(positionFrom, positionTo);
         return boardCopy;
-    }
-
-    public void setPositionFrom(int positionFrom) {
-        this.positionFrom = positionFrom;
-    }
-
-    public int getPositionFrom() {
-        return positionFrom;
-    }
-
-    @Override
-    public int hashCode() {
-        return board.hashCode();
     }
 }
