@@ -45,16 +45,16 @@ public class DecisionTreeNode {
             return AI.evaluateBoard(board, color);
         }
 
-        if(color == PieceColor.BLACK) {
+        if(color == PieceColor.WHITE) {
             int max = -1000;
             for (DecisionTreeNode node : children) {
-                max = Math.max(max, node.bestBoardPosition(PieceColor.WHITE));
+                max = Math.max(max, node.bestBoardPosition(PieceColor.BLACK));
             }
             return max;
-        } else /*(color == PieceColor.WHITE)*/ {
+        } else /*(color == PieceColor.BLACK)*/ {
             int min = 1000;
             for(DecisionTreeNode node : children) {
-                min = Math.min(min, node.bestBoardPosition(PieceColor.WHITE));
+                min = Math.min(min, node.bestBoardPosition(PieceColor.BLACK));
             }
             return min;
         }
@@ -66,10 +66,10 @@ public class DecisionTreeNode {
         }
 
         DecisionTreeNode best = null;
-        int maxScore = (color == PieceColor.BLACK ? -10000 : 10000);
+        int maxScore = (color == PieceColor.WHITE ? -10000 : 10000);
         for(DecisionTreeNode node : children) {
-            int score = node.bestBoardPosition(PieceColor.BLACK);
-            if(best == null || score * (color == PieceColor.BLACK ? 1 : -1) > maxScore * (color == PieceColor.BLACK ? 1 : -1)) {
+            int score = node.bestBoardPosition(PieceColor.WHITE);
+            if(best == null || score * (color == PieceColor.WHITE ? 1 : -1) > maxScore * (color == PieceColor.WHITE ? 1 : -1)) {
                 maxScore = score;
                 best = node;
             }
