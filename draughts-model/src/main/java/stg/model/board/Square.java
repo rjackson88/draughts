@@ -142,11 +142,11 @@ public class Square {
     }
     
     public boolean isBlackKingsRow() {
-        return getRow() == 0;
+        return getRow() == 7;
     }
     
     public boolean isWhiteKingsRow() {
-        return getRow() == 7;
+        return getRow() == 0;
     }
     
     public void kingPiece() {
