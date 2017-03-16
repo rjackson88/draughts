@@ -9,23 +9,25 @@ import stg.model.piece.Piece;
  * Created by rickjackson on 3/10/17.
  */
 public class SquareTest {
+    private Board board;
     private Square square1;
     private Square square2;
     
     @Before
     public void setup() {
-        this.square1 = new Square(0, 1, SquareColor.DARK);
-        this.square2 = new Square(7, 6, SquareColor.DARK);
+        this.board = new Board();
+        this.square1 = this.board.getSquare(0);
+        this.square2 = this.board.getSquare(31);
     }
     
     @Test
     public void valueOfSquare1() {
-        assertEquals(0, square1.value());
+        assertEquals(1, square1.value());
     }
     
     @Test
     public void getBoard() {
-        assertNull(square1.getBoard());
+        assertNotNull(square1.getBoard());
     }
     
     @Test
@@ -36,26 +38,20 @@ public class SquareTest {
     
     @Test
     public void getPieceOnSquare1() {
-        assertNull(square1.getPiece());
-    }
-    
-    @Test
-    public void setPieceOnSquare2() {
-        assertNull(square2.getPiece());
-        square2.setPiece(new Piece(2));
-        assertNotNull(square2.getPiece());
-    }
-    
-    @Test
-    public void placePieceOnSquare1() {
-        assertNull(square1.getPiece());
-        square1.placePiece(new Piece(-2));
         assertNotNull(square1.getPiece());
     }
     
     @Test
+    public void setPieceTest() {
+        Piece p = board.getPiece(20);
+        Square s = board.getSquare(16);
+        assertNull(s.getPiece());
+        s.setPiece(p);
+        assertNotNull(s.getPiece());
+    }
+    
+    @Test
     public void removePieceOnSquare1() {
-        square1.placePiece(new Piece());
         square1.removePiece();
         assertNull(square1.getPiece());
     }
@@ -90,7 +86,7 @@ public class SquareTest {
     @Test
     public void setRowForSquare1() {
         square1.setRow(1);
-        assertEquals(1, square1);
+        assertEquals(1, square1.getRow());
     }
     
     @Test
