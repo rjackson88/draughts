@@ -139,6 +139,19 @@ public class BoardTest {
     }
     
     @Test
+    public void getAllMovesForPieceAtIndex8() {
+        List<Integer> m = board.getAllMovesForPiece(8);
+        assertEquals(12, (int) m.get(0));
+    }
+    
+    @Test
+    public void checkMovesTest() {
+        board.setPositionFrom(8);
+        board.checkMoves();
+        assertEquals(-3, board.getBoard()[12]);
+    }
+    
+    @Test
     public void movePieceTest() {
         board.movePiece(8, 12);
     }

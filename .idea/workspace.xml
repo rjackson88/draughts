@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e90044f1-b932-4c51-87a3-b2d980ade0ff" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/draughts-model/src/main/java/stg/model/board/Board.java" afterPath="$PROJECT_DIR$/draughts-model/src/main/java/stg/model/board/Board.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/draughts-model/src/main/java/stg/model/board/Square.java" afterPath="$PROJECT_DIR$/draughts-model/src/main/java/stg/model/board/Square.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/draughts-model/src/test/java/stg/model/board/BoardTest.java" afterPath="$PROJECT_DIR$/draughts-model/src/test/java/stg/model/board/BoardTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/draughts-model/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,11 +31,51 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Square.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/draughts-model/src/main/java/stg/model/board/Square.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="103" column="30" lean-forward="false" selection-start-line="103" selection-start-column="30" selection-end-line="103" selection-end-column="30" />
+              <folding>
+                <element signature="e#2095#2096#0" expanded="true" />
+                <element signature="e#2126#2127#0" expanded="true" />
+                <element signature="e#2163#2164#0" expanded="true" />
+                <element signature="e#2199#2200#0" expanded="true" />
+                <element signature="e#2239#2240#0" expanded="true" />
+                <element signature="e#2276#2277#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Board.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/draughts-model/src/main/java/stg/model/board/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="211" column="26" lean-forward="true" selection-start-line="211" selection-start-column="26" selection-end-line="211" selection-end-column="26" />
+            <state relative-caret-position="259">
+              <caret line="219" column="46" lean-forward="false" selection-start-line="219" selection-start-column="46" selection-end-line="219" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BoardTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/draughts-model/src/test/java/stg/model/board/BoardTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="124">
+              <caret line="150" column="44" lean-forward="false" selection-start-line="150" selection-start-column="44" selection-end-line="150" selection-end-column="44" />
+              <folding>
+                <element signature="e#4187#4188#0" expanded="true" />
+                <element signature="e#4225#4226#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/draughts-model/src/main/java/stg/model/game/Game.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-459">
+              <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -454,85 +496,7 @@
       <recent name="stg.model.board" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BoardTest.movePieceTest">
-    <configuration default="false" name="BoardTest.blankIntRowTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="stg.model.board.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="draughts-model" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="stg.model.board" />
-      <option name="MAIN_CLASS_NAME" value="stg.model.board.BoardTest" />
-      <option name="METHOD_NAME" value="blankIntRowTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="BoardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="stg.model.board.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="draughts-model" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="stg.model.board" />
-      <option name="MAIN_CLASS_NAME" value="stg.model.board.BoardTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="SquareTest.indexForSquare1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="stg.model.board.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="draughts-model" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="stg.model.board" />
-      <option name="MAIN_CLASS_NAME" value="stg.model.board.SquareTest" />
-      <option name="METHOD_NAME" value="indexForSquare1" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.BoardTest.checkMovesTest">
     <configuration default="false" name="SquareTest.indexForSquare2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -572,6 +536,84 @@
       <option name="PACKAGE_NAME" value="stg.model.board" />
       <option name="MAIN_CLASS_NAME" value="stg.model.board.BoardTest" />
       <option name="METHOD_NAME" value="movePieceTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="BoardTest.getAllMovesForPieceAtIndex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="stg.model.board.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="draughts-model" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="stg.model.board" />
+      <option name="MAIN_CLASS_NAME" value="stg.model.board.BoardTest" />
+      <option name="METHOD_NAME" value="getAllMovesForPieceAtIndex" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="BoardTest.getAllMovesForPieceAtIndex8" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="stg.model.board.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="draughts-model" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="stg.model.board" />
+      <option name="MAIN_CLASS_NAME" value="stg.model.board.BoardTest" />
+      <option name="METHOD_NAME" value="getAllMovesForPieceAtIndex8" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="BoardTest.checkMovesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="stg.model.board.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="draughts-model" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="stg.model.board" />
+      <option name="MAIN_CLASS_NAME" value="stg.model.board.BoardTest" />
+      <option name="METHOD_NAME" value="checkMovesTest" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -984,19 +1026,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Spring Boot.DraughtsModelApplication" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.BoardTest.blankIntRowTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.BoardTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.SquareTest.indexForSquare1" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.SquareTest.indexForSquare2" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.BoardTest.movePieceTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.SquareTest.indexForSquare2" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.BoardTest.movePieceTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.BoardTest.getAllMovesForPieceAtIndex" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.BoardTest.getAllMovesForPieceAtIndex8" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.BoardTest.checkMovesTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.BoardTest.movePieceTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.SquareTest.indexForSquare2" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.SquareTest.indexForSquare1" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.BoardTest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.BoardTest.blankIntRowTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.BoardTest.checkMovesTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.BoardTest.getAllMovesForPieceAtIndex8" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.BoardTest.getAllMovesForPieceAtIndex" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.BoardTest.movePieceTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.SquareTest.indexForSquare2" />
       </list>
     </recent_temporary>
   </component>
@@ -1012,44 +1054,44 @@
       <updated>1489182003279</updated>
       <workItem from="1489182004625" duration="123591000" />
       <workItem from="1489665519724" duration="472000" />
-      <workItem from="1489669467055" duration="13517000" />
+      <workItem from="1489669467055" duration="14898000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="BoardTest - 2017.03.16 at 09h 11m 10s.xml">
-      <configuration name="BoardTest" configurationId="JUnit" />
+    <history-entry file="BoardTest_checkMovesTest - 2017.03.16 at 16h 25m 59s.xml">
+      <configuration name="BoardTest.checkMovesTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BoardTest - 2017.03.16 at 09h 11m 14s.xml">
-      <configuration name="BoardTest" configurationId="JUnit" />
+    <history-entry file="BoardTest_checkMovesTest - 2017.03.16 at 16h 27m 37s.xml">
+      <configuration name="BoardTest.checkMovesTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BoardTest_movePieceTest - 2017.03.16 at 14h 20m 15s.xml">
-      <configuration name="BoardTest.movePieceTest" configurationId="JUnit" />
+    <history-entry file="BoardTest_checkMovesTest - 2017.03.16 at 16h 30m 44s.xml">
+      <configuration name="BoardTest.checkMovesTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BoardTest_movePieceTest - 2017.03.16 at 14h 35m 53s.xml">
-      <configuration name="BoardTest.movePieceTest" configurationId="JUnit" />
+    <history-entry file="BoardTest_checkMovesTest - 2017.03.16 at 16h 30m 57s.xml">
+      <configuration name="BoardTest.checkMovesTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BoardTest_movePieceTest - 2017.03.16 at 14h 46m 20s.xml">
-      <configuration name="BoardTest.movePieceTest" configurationId="JUnit" />
+    <history-entry file="BoardTest_checkMovesTest - 2017.03.16 at 16h 34m 07s.xml">
+      <configuration name="BoardTest.checkMovesTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BoardTest_movePieceTest - 2017.03.16 at 14h 47m 43s.xml">
-      <configuration name="BoardTest.movePieceTest" configurationId="JUnit" />
+    <history-entry file="BoardTest_checkMovesTest - 2017.03.16 at 16h 36m 41s.xml">
+      <configuration name="BoardTest.checkMovesTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BoardTest_checkMovesTest - 2017.03.16 at 16h 37m 10s.xml">
+      <configuration name="BoardTest.checkMovesTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BoardTest_getAllMovesForPieceAtIndex - 2017.03.16 at 16h 21m 58s.xml">
+      <configuration name="BoardTest.getAllMovesForPieceAtIndex" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BoardTest_getAllMovesForPieceAtIndex8 - 2017.03.16 at 16h 23m 13s.xml">
+      <configuration name="BoardTest.getAllMovesForPieceAtIndex8" configurationId="JUnit" />
     </history-entry>
     <history-entry file="BoardTest_movePieceTest - 2017.03.16 at 14h 47m 55s.xml">
       <configuration name="BoardTest.movePieceTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SquareTest_indexForSquare1 - 2017.03.16 at 14h 03m 56s.xml">
-      <configuration name="SquareTest.indexForSquare1" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SquareTest_indexForSquare2 - 2017.03.16 at 14h 04m 02s.xml">
-      <configuration name="SquareTest.indexForSquare2" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SquareTest_valueOfSquare1 - 2017.03.15 at 19h 46m 07s.xml">
-      <configuration name="SquareTest.valueOfSquare1" configurationId="JUnit" />
-    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137580000" />
+    <option name="totallyTimeSpent" value="138961000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="976" y="23" width="944" height="988" extended-state="0" />
@@ -1073,9 +1115,9 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.55632186" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.55632186" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32988507" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988507" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26053214" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988507" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1368,27 +1410,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/draughts-model/src/main/java/stg/model/board/Square.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="21" column="26" lean-forward="false" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
-          <folding>
-            <element signature="e#1365#1366#0" expanded="true" />
-            <element signature="e#1393#1394#0" expanded="true" />
-            <element signature="e#2001#2002#0" expanded="true" />
-            <element signature="e#2055#2056#0" expanded="true" />
-            <element signature="e#2283#2284#0" expanded="true" />
-            <element signature="e#2320#2321#0" expanded="true" />
-            <element signature="e#2431#2432#0" expanded="true" />
-            <element signature="e#2468#2469#0" expanded="true" />
-            <element signature="e#3683#3684#0" expanded="true" />
-            <element signature="e#3715#3716#0" expanded="true" />
-            <element signature="e#3939#3940#0" expanded="true" />
-            <element signature="e#3972#3973#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/draughts-model/src/main/java/stg/model/piece/Piece.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4762">
@@ -1416,39 +1437,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/draughts-model/src/main/java/stg/model/game/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-          <folding>
-            <element signature="e#462#463#0" expanded="true" />
-            <element signature="e#487#488#0" expanded="true" />
-            <element signature="e#525#526#0" expanded="true" />
-            <element signature="e#553#554#0" expanded="true" />
-            <element signature="e#588#589#0" expanded="true" />
-            <element signature="e#623#624#0" expanded="true" />
-            <element signature="e#668#669#0" expanded="true" />
-            <element signature="e#709#710#0" expanded="true" />
-            <element signature="e#747#748#0" expanded="true" />
-            <element signature="e#787#788#0" expanded="true" />
-            <element signature="e#928#929#0" expanded="true" />
-            <element signature="e#973#974#0" expanded="true" />
-            <element signature="e#1125#1126#0" expanded="true" />
-            <element signature="e#1170#1171#0" expanded="true" />
-            <element signature="e#1329#1330#0" expanded="true" />
-            <element signature="e#1374#1375#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/draughts-model/src/test/java/stg/model/board/BoardTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1905">
-          <caret line="139" column="4" lean-forward="true" selection-start-line="139" selection-start-column="4" selection-end-line="139" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/draughts-model/src/main/java/stg/model/piece/Moves.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -1457,10 +1445,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/draughts-model/src/main/java/stg/model/game/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-459">
+          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/draughts-model/src/test/java/stg/model/board/BoardTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="150" column="44" lean-forward="false" selection-start-line="150" selection-start-column="44" selection-end-line="150" selection-end-column="44" />
+          <folding>
+            <element signature="e#4187#4188#0" expanded="true" />
+            <element signature="e#4225#4226#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/draughts-model/src/main/java/stg/model/board/Square.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="103" column="30" lean-forward="false" selection-start-line="103" selection-start-column="30" selection-end-line="103" selection-end-column="30" />
+          <folding>
+            <element signature="e#2095#2096#0" expanded="true" />
+            <element signature="e#2126#2127#0" expanded="true" />
+            <element signature="e#2163#2164#0" expanded="true" />
+            <element signature="e#2199#2200#0" expanded="true" />
+            <element signature="e#2239#2240#0" expanded="true" />
+            <element signature="e#2276#2277#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/draughts-model/src/main/java/stg/model/board/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="211" column="26" lean-forward="true" selection-start-line="211" selection-start-column="26" selection-end-line="211" selection-end-column="26" />
+        <state relative-caret-position="259">
+          <caret line="219" column="46" lean-forward="false" selection-start-line="219" selection-start-column="46" selection-end-line="219" selection-end-column="46" />
           <folding />
         </state>
       </provider>

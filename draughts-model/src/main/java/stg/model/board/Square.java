@@ -92,6 +92,18 @@ public class Square {
         return (getRow() * 4) + (getCol() / 2);
     }
     
+    public boolean getSelected() {
+        return selected;
+    }
+    
+    public void setSelected() {
+        this.selected = true;
+    }
+    
+    public void setNotSelected() {
+        this.selected = false;
+    }
+    
     public int[] getCoordinates() {
         return coordinates;
     }
