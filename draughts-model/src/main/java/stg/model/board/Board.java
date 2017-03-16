@@ -205,8 +205,8 @@ public class Board {
         return getPiece(index).move.getAvailableMoves(mustJump);
     }
     
-    public void checkMoves(int index) {
-        List<Integer> moves = getAllMovesForPiece(index);
+    public void checkMoves() {
+        List<Integer> moves = getAllMovesForPiece(positionFrom);
         
         for (int i = 0; i < moves.size(); i++) {
             board[i] = -3;
