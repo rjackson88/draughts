@@ -11,6 +11,7 @@ public class Square {
     private Piece piece = null;
     private int[] coordinates = new int[2];
     private SquareColor color;
+    private boolean selected = false;
     
     public Square() {
         
@@ -43,6 +44,9 @@ public class Square {
     // Query Operations
     
     public int value() {
+        if (selected) {
+            return -3;
+        }
         return piece == null ? 0 : piece.value();
     }
     
@@ -63,7 +67,9 @@ public class Square {
     }
     
     public void placePiece(Piece piece) {
-        if (piece.value() == 0) {
+        if (piece.value() == -3) {
+            selected = true;
+        } else if (piece.value() == 0) {
             setPiece(null);
         } else {
             setPiece(piece);

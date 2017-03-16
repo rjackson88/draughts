@@ -24,9 +24,20 @@ public enum PieceType {
         public String toString() {
             return "King";
         }
+    },
+    
+    SELECT {
+        @Override
+        public String toString() {
+            return "Selected";
+        }
     };
     
     public int getValue() {
-        return ordinal();
+        if (ordinal() == 3) {
+            return -3;
+        } else {
+            return ordinal();
+        }
     }
 }
