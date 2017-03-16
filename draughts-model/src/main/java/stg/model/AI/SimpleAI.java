@@ -7,7 +7,7 @@ public class SimpleAI {
 
     static public Board getNewBoardIntermediate(Board board) {
 
-        int blackMover = board.getAllPossibleMovers(PieceColor.BLACK).get(0);
+        int blackMover = board.getAllPossibleMovers(PieceColor.WHITE).get(0);
         int positionTo = board.getAllMovesForPiece(blackMover).get(0);
         return board.createPossibleBoardState(blackMover, positionTo);
     }

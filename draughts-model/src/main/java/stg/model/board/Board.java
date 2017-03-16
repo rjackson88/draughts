@@ -232,6 +232,7 @@ public class Board {
         positionTo = 0;
     }
 
+    @JsonIgnore
     public Piece[] getAllPiecesOnGameboard() {
         Piece[] pieces = new Piece[24];
         int counter = 0;

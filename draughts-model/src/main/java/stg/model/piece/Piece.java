@@ -1,10 +1,10 @@
 package stg.model.piece;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import stg.model.board.Board;
 import stg.model.board.Square;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -32,7 +32,8 @@ public class Piece {
     public Square getSquare() {
         return square;
     }
-    
+
+    @JsonIgnore
     public void setSquare(Square square) {
         if (getSquare() != null) {
             getSquare().removePiece();
@@ -40,7 +41,9 @@ public class Piece {
         this.square = square;
         getSquare().placePiece(this);
     }
-    
+
+
+    @JsonIgnore
     public void setSquare(int index) {
         setSquare(getBoard().getSquare(index));
     }
@@ -56,11 +59,12 @@ public class Piece {
     public PieceColor getColor() {
         return color;
     }
-    
+
+    @JsonIgnore
     public void setColor(PieceColor color) {
         this.color = color;
     }
-    
+    @JsonIgnore
     public void setColor(int i) {
         this.color = PieceColor.values()[i + 1];
     }
@@ -68,11 +72,11 @@ public class Piece {
     public PieceType getType() {
         return type;
     }
-    
+    @JsonIgnore
     public void setType(PieceType type) {
         this.type = type;
     }
-    
+    @JsonIgnore
     public void setType(int i) {
         this.type = PieceType.values()[i];
     }
@@ -153,19 +157,19 @@ public class Piece {
     public static class Move extends Moves {
         private Piece piece;
         private boolean mustJump;
-        
+        @JsonIgnore
         public Move(Piece piece) {
             this.piece = piece;
         }
-        
+        @JsonIgnore
         public void to(Square square) {
             piece.setSquare(square);
         }
-        
+        @JsonIgnore
         public void to(int index) {
             piece.setSquare(piece.getBoard().getSquare(index));
         }
-        
+        @JsonIgnore
         public void move(int to) {
             int i = piece.atIndex();
             
@@ -255,11 +259,11 @@ public class Piece {
         public void capture(Square jumped) {
             jumped.getPiece().capture();
         }
-        
+        @JsonIgnore
         public boolean isEmpty(Square square) {
             return square.isEmpty();
         }
-        
+        @JsonIgnore
         public boolean isEmpty(int index) {
             return piece.getBoard().getSquare(index).isEmpty();
         }

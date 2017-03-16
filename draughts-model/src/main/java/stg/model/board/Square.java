@@ -78,6 +78,7 @@ public class Square {
                 getPiece().setSquare(this);
             }
         }
+
     }
     
     public void removePiece() {
