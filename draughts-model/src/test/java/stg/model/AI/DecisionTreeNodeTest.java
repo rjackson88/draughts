@@ -38,7 +38,10 @@ public class DecisionTreeNodeTest {
 
     @Test
     public void getBestMoveTest() {
-
+        testNode.create(PieceColor.BLACK);
+        Board boardCopy = new Board(board.getBoard());
+        boardCopy.movePiece(8,12);
+        assertEquals(boardCopy, testNode.getMove(PieceColor.BLACK).board);
     }
 
 }

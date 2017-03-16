@@ -192,4 +192,8 @@ public class Board {
         return positionFrom;
     }
 
+    @Override
+    public int hashCode() {
+        return board.hashCode();
+    }
 }
