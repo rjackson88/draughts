@@ -1,8 +1,8 @@
 package stg.model.board;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import stg.model.piece.Piece;
 import stg.model.piece.PieceColor;
-
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,15 +11,18 @@ import java.util.List;
  * Created by rickjackson on 3/10/17.
  */
 public class Board {
+    @JsonIgnore
     Square[][] gameBoard = new Square[8][8];
     private int[] board = new int[32];
-    private int positionFrom = -1;
-    private int positionTo = -1;
-    private int whiteCount = 0;
-    private int blackCount = 0;
+    private int positionFrom;
+    private int positionTo;
+    private int whitePieceCount = 12;
+    private int blackPieceCount = 12;
     private boolean mustJump = false;
+    int id = 1;
     
     public Board() {
+        this.board = defaultBoardArray();
         constructNewGameBoard();
         placePieces(defaultBoardArray());
     }
@@ -27,10 +30,17 @@ public class Board {
     // public Board(Square[][] gameBoard) {
     //     this.gameBoard = gameBoard;
     // }
-    
+
+
+    public int getId() {
+        return id;
+    }
+
     public Board(int[] board) {
+        this.board = board;
         constructNewGameBoard();
         placePieces(board);
+
     }
     
     public int getPositionFrom() {
@@ -49,20 +59,20 @@ public class Board {
         this.positionTo = positionTo;
     }
     
-    public int getWhiteCount() {
-        return whiteCount;
+    public int getWhitePieceCount() {
+        return whitePieceCount;
     }
     
-    public void setWhiteCount(int whiteCount) {
-        this.whiteCount = whiteCount;
+    public void setWhitePieceCount(int whitePieceCount) {
+        this.whitePieceCount = whitePieceCount;
     }
     
-    public int getBlackCount() {
-        return blackCount;
+    public int getBlackPieceCount() {
+        return blackPieceCount;
     }
     
-    public void setBlackCount(int blackCount) {
-        this.blackCount = blackCount;
+    public void setBlackPieceCount(int blackPieceCount) {
+        this.blackPieceCount = blackPieceCount;
     }
     
     int[] blankIntRow() {
@@ -194,8 +204,26 @@ public class Board {
     public void movePiece(int from, int to) {
         getPiece(from).move.move(to);
     }
+
+    public void movePiece() {
+       clearMoves();
+        getPiece(positionFrom).move.move(positionTo);
+        clearPositions();
+    }
     
     public List<Integer> getAllMovesForPiece(int index) {
         return getPiece(index).move.getAvailableMoves(mustJump);
+    }
+
+    public void clearMoves() {
+        for (int i = 0; i < 32; i++) {
+            if (board[i] == -3) {
+                board[i] = 0;
+            }
+        }
+    }
+    public void clearPositions() {
+        positionFrom = 0;
+        positionTo = 0;
     }
 }

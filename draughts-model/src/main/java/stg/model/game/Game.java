@@ -1,86 +1,80 @@
 package stg.model.game;
 
-import stg.model.board.Board;
-
 /**
  * Created by rickjackson on 3/11/17.
  */
 public class Game {
-    private Board b;
-    private long id;
-    // private int[] board = new int[32];
-    // private int positionTo;
-    // private int positionFrom;
-    // private int blackPieceCount;
-    // private int whitePieceCount;
-    // private boolean whiteWinner;
-    // private boolean blackWinner;
-    
-    public Game() {
-        
-    }
-    
+
+    private int id =1;
+    private int[] board = new int[32];
+    private int positionTo;
+    private int positionFrom;
+    private int blackPieceCount;
+    private int whitePieceCount;
+    private boolean whiteWinner;
+    private boolean blackWinner;
+
     public long getId() {
         return id;
     }
-    
-    public void setId(long id) {
+
+    public void setId(int id) {
         this.id = id;
     }
-    
+
     public int[] getBoard() {
-        return b.getBoard();
+        return board;
     }
-    
+
     public void setBoard(int[] board) {
-        this.b = new Board(board);
+        this.board = board;
     }
-    
+
     public int getPositionTo() {
-        return b.getPositionTo();
+        return positionTo;
     }
-    
+
     public void setPositionTo(int positionTo) {
-        this.b.setPositionTo(positionTo);
+        this.positionTo = positionTo;
     }
-    
+
     public int getPositionFrom() {
-        return this.b.getPositionTo();
+        return positionFrom;
     }
-    
+
     public void setPositionFrom(int positionFrom) {
-        this.b.setPositionFrom(positionFrom);
+        this.positionFrom = positionFrom;
     }
-    
+
     public int getBlackPieceCount() {
-        return this.b.getBlackCount();
+        return blackPieceCount;
     }
-    
+
     public void setBlackPieceCount(int blackPieceCount) {
-        this.b.setBlackCount(blackPieceCount);
+        this.blackPieceCount = blackPieceCount;
     }
-    
+
     public int getWhitePieceCount() {
-        return this.b.getWhiteCount();
+        return whitePieceCount;
     }
-    
+
     public void setWhitePieceCount(int whitePieceCount) {
-        this.b.setWhiteCount(whitePieceCount);
+        this.whitePieceCount = whitePieceCount;
     }
-    
-    // public boolean isWhiteWinner() {
-    //     return whiteWinner;
-    // }
-    //
-    // public void setWhiteWinner(boolean whiteWinner) {
-    //     this.whiteWinner = whiteWinner;
-    // }
-    //
-    // public boolean isBlackWinner() {
-    //     return blackWinner;
-    // }
-    //
-    // public void setBlackWinner(boolean blackWinner) {
-    //     this.blackWinner = blackWinner;
-    // }
+
+    public boolean isWhiteWinner() {
+        return whiteWinner;
+    }
+
+    public void setWhiteWinner(boolean whiteWinner) {
+        this.whiteWinner = whiteWinner;
+    }
+
+    public boolean isBlackWinner() {
+        return blackWinner;
+    }
+
+    public void setBlackWinner(boolean blackWinner) {
+        this.blackWinner = blackWinner;
+    }
 }
