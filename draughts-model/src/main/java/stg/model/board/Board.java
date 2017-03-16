@@ -26,7 +26,7 @@ public class Board {
         constructNewGameBoard();
         placePieces(defaultBoardArray());
     }
-    
+
     public Board(int[] board) {
         this.board = board;
         constructNewGameBoard();
@@ -36,35 +36,35 @@ public class Board {
     public int getPositionFrom() {
         return positionFrom;
     }
-    
+
     public void setPositionFrom(int positionFrom) {
         this.positionFrom = positionFrom;
     }
-    
+
     public int getPositionTo() {
         return positionTo;
     }
-    
+
     public void setPositionTo(int positionTo) {
         this.positionTo = positionTo;
     }
-    
+
     public int getWhiteCount() {
         return whiteCount;
     }
-    
+
     public void setWhiteCount(int whiteCount) {
         this.whiteCount = whiteCount;
     }
-    
+
     public int getBlackCount() {
         return blackCount;
     }
-    
+
     public void setBlackCount(int blackCount) {
         this.blackCount = blackCount;
     }
-    
+
     int[] blankIntRow() {
         int[] r = {0, 0, 0, 0, 0, 0, 0, 0};
         return r;
@@ -199,15 +199,20 @@ public class Board {
         getPiece(positionFrom).move.move(positionTo);
         clearPositions();
     }
-    
+
     public List<Integer> getAllMovesForPiece(int index) {
         mustJumpThisRound(getSquare(index).getPiece().getColor());
         return getPiece(index).move.getAvailableMoves(mustJump);
     }
-    
+
+    public void checkMoves(int index) {
+        List<Integer> moves = getAllMovesForPiece(index);
+    }
+
+
     public void checkMoves() {
         List<Integer> moves = getAllMovesForPiece(positionFrom);
-        
+
         for (int i = 0; i < moves.size(); i++) {
             int j = moves.get(i);
             getSquare(j).setSelected();
@@ -225,5 +230,22 @@ public class Board {
     public void clearPositions() {
         positionFrom = 0;
         positionTo = 0;
+    }
+
+    public Piece[] getAllPiecesOnGameboard() {
+        Piece[] pieces = new Piece[24];
+        int counter = 0;
+        for (int i = 0; i < 32; i++) {
+            if (getSquare(i).getPiece() == null)
+                continue;
+            pieces[counter++] = getSquare(i).getPiece();
+            }
+        return pieces;
+    }
+
+    public Board createPossibleBoardState(int positionFrom, int positionTo) {
+        Board boardCopy = new Board(this.board);
+        boardCopy.movePiece(positionFrom, positionTo);
+        return boardCopy;
     }
 }
