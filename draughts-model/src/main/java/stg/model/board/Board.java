@@ -209,14 +209,15 @@ public class Board {
         List<Integer> moves = getAllMovesForPiece(positionFrom);
         
         for (int i = 0; i < moves.size(); i++) {
-            board[i] = -3;
+            int j = moves.get(i);
+            getSquare(j).setSelected();
         }
     }
     
     public void clearMoves() {
         for (int i = 0; i < 32; i++) {
             if (board[i] == -3) {
-                board[i] = 0;
+                getSquare(i).setNotSelected();
             }
         }
     }
