@@ -15,10 +15,10 @@ public class Board {
     @JsonIgnore
     private Square[][] gameBoard = new Square[8][8];
     private int[] board = new int[32];
-    private int positionFrom = -1;
-    private int positionTo = -1;
-    private int whiteCount = 0;
-    private int blackCount = 0;
+    private int positionFrom;
+    private int positionTo;
+    private int whiteCount;
+    private int blackCount;
     private boolean mustJump = false;
     
     public Board() {

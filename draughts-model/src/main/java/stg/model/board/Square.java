@@ -219,7 +219,7 @@ public class Square {
         return isValidSquare(i, j) ? getBoard().getSquare(i, j) : null;
     }
     
-    Square getSquare(int index) {
+    public Square getSquare(int index) {
         int[] c = Square.getCoordinatesFromIndex(index);
         return isValidSquare(c[0], c[1]) ? getBoard().getSquare(index) : null;
     }
