@@ -8,13 +8,13 @@ import stg.model.board.Board;
 public class Game {
     private Board b;
     private long id;
-    // private int[] board = new int[32];
-    // private int positionTo;
-    // private int positionFrom;
-    // private int blackPieceCount;
-    // private int whitePieceCount;
-    // private boolean whiteWinner;
-    // private boolean blackWinner;
+    private int[] board = new int[32];
+    private int positionTo;
+    private int positionFrom;
+    private int blackPieceCount;
+    private int whitePieceCount;
+    private boolean whiteWinner;
+    private boolean blackWinner;
     
     public Game() {
         

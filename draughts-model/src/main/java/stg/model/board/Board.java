@@ -1,5 +1,6 @@
 package stg.model.board;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import stg.model.piece.Piece;
 import stg.model.piece.PieceColor;
 
@@ -11,7 +12,8 @@ import java.util.List;
  * Created by rickjackson on 3/10/17.
  */
 public class Board {
-    Square[][] gameBoard = new Square[8][8];
+    @JsonIgnore
+    private Square[][] gameBoard = new Square[8][8];
     private int[] board = new int[32];
     private int positionFrom = -1;
     private int positionTo = -1;
@@ -20,15 +22,13 @@ public class Board {
     private boolean mustJump = false;
     
     public Board() {
+        this.board = defaultBoardArray();
         constructNewGameBoard();
         placePieces(defaultBoardArray());
     }
     
-    // public Board(Square[][] gameBoard) {
-    //     this.gameBoard = gameBoard;
-    // }
-    
     public Board(int[] board) {
+        this.board = board;
         constructNewGameBoard();
         placePieces(board);
     }
@@ -195,7 +195,34 @@ public class Board {
         getPiece(from).move.move(to);
     }
     
+    public void movePiece() {
+        getPiece(positionFrom).move.move(positionTo);
+        clearPositions();
+    }
+    
     public List<Integer> getAllMovesForPiece(int index) {
+        mustJumpThisRound(getSquare(index).getPiece().getColor());
         return getPiece(index).move.getAvailableMoves(mustJump);
+    }
+    
+    public void checkMoves(int index) {
+        List<Integer> moves = getAllMovesForPiece(index);
+        
+        for (int i = 0; i < moves.size(); i++) {
+            board[i] = -3;
+        }
+    }
+    
+    public void clearMoves() {
+        for (int i = 0; i < 32; i++) {
+            if (board[i] == -3) {
+                board[i] = 0;
+            }
+        }
+    }
+    
+    public void clearPositions() {
+        positionFrom = 0;
+        positionTo = 0;
     }
 }
