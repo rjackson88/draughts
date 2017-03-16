@@ -137,4 +137,9 @@ public class BoardTest {
         assertEquals(17, (int) m.get(0));
         assertEquals(18, (int) m.get(1));
     }
+    
+    @Test
+    public void movePieceTest() {
+        board.movePiece(8, 12);
+    }
 }
