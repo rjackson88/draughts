@@ -208,7 +208,7 @@ public class Piece {
                     return Direction.RIGHT;
                 }
             } else {
-                if (i - to == 4) {
+                if (i - to == 5) {
                     return Direction.LEFT;
                 } else if (i - to == 4) {
                     return Direction.RIGHT;
