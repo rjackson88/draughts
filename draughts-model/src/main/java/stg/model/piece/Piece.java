@@ -157,7 +157,7 @@ public class Piece {
     public static class Move extends Moves {
         private Piece piece;
         private boolean mustJump;
-        
+        @JsonIgnore
         public Move(Piece piece) {
             this.piece = piece;
         }
@@ -169,7 +169,7 @@ public class Piece {
         public void to(int index) {
             piece.setSquare(piece.getBoard().getSquare(index));
         }
-        
+        @JsonIgnore
         public void move(int to) {
             int i = piece.atIndex();
             
