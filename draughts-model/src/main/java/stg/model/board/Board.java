@@ -3,6 +3,7 @@ package stg.model.board;
 import stg.model.piece.Piece;
 import stg.model.piece.PieceColor;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
