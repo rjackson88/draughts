@@ -24,12 +24,20 @@ public enum PieceColor {
         public String toString() {
             return "Black";
         }
+    },
+    
+    TRANSPARENT {
+        
     };
     
     private static final PieceColor[] ENUMS = PieceColor.values();
     
     public int getValue() {
-        return ordinal() - 1;
+        if (ordinal() == 3) {
+            return -3;
+        } else {
+            return ordinal() - 1;
+        }
     }
     
     public PieceColor getColor(int i) {

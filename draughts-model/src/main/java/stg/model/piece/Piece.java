@@ -78,6 +78,11 @@ public class Piece {
     }
     
     public void setProperties(int i) {
+        if (i == -3) {
+            setColor(PieceColor.TRANSPARENT);
+            setType(PieceType.SELECT);
+        }
+        
         if (i < 0) {
             setColor(PieceColor.WHITE);
         } else if (i > 0) {
@@ -96,7 +101,12 @@ public class Piece {
     }
     
     public int value() {
-        return color.getValue() * type.getValue();
+        if (color.equals(PieceColor.TRANSPARENT)) {
+            return -3;
+        } else {
+            return color.getValue() * type.getValue();
+        }
+        
     }
     
     public boolean isMan() {

@@ -1,9 +1,12 @@
 package stg.model.game;
 
+import stg.model.board.Board;
+
 /**
  * Created by rickjackson on 3/11/17.
  */
 public class Game {
+    private Board b;
     private long id;
     private int[] board = new int[32];
     private int positionTo;
@@ -17,67 +20,69 @@ public class Game {
         
     }
     
-    private long getId() {
+    public long getId() {
         return id;
     }
     
-    private void setId(long id) {
+    public void setId(long id) {
         this.id = id;
     }
     
-    private int[] getBoard() {
-        return board;
+    public int[] getB() {
+        return b.getBoard();
     }
     
-    private void setBoard(int[] board) {
-        this.board = board;
+    public void setB(int[] board) {
+        this.b = new Board(board);
     }
     
-    private int getPositionTo() {
+    
+    
+    public int getPositionTo() {
         return positionTo;
     }
     
-    private void setPositionTo(int positionTo) {
+    public void setPositionTo(int positionTo) {
         this.positionTo = positionTo;
     }
     
-    private int getPositionFrom() {
+    public int getPositionFrom() {
         return positionFrom;
     }
     
-    private void setPositionFrom(int positionFrom) {
+    public void setPositionFrom(int positionFrom) {
         this.positionFrom = positionFrom;
     }
     
-    private int getBlackPieceCount() {
+    public int getBlackPieceCount() {
         return blackPieceCount;
     }
     
-    private void setBlackPieceCount(int blackPieceCount) {
+    public void setBlackPieceCount(int blackPieceCount) {
         this.blackPieceCount = blackPieceCount;
     }
     
-    private int getWhitePieceCount() {
+    public int getWhitePieceCount() {
         return whitePieceCount;
     }
     
-    private void setWhitePieceCount(int whitePieceCount) {
+    public void setWhitePieceCount(int whitePieceCount) {
         this.whitePieceCount = whitePieceCount;
     }
     
-    private boolean isWhiteWinner() {
+    public boolean isWhiteWinner() {
         return whiteWinner;
     }
     
-    private void setWhiteWinner(boolean whiteWinner) {
+    public void setWhiteWinner(boolean whiteWinner) {
         this.whiteWinner = whiteWinner;
     }
     
-    private boolean isBlackWinner() {
+    public boolean isBlackWinner() {
         return blackWinner;
     }
     
-    private void setBlackWinner(boolean blackWinner) {
+    public void setBlackWinner(boolean blackWinner) {
         this.blackWinner = blackWinner;
     }
 }

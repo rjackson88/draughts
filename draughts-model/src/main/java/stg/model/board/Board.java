@@ -23,9 +23,9 @@ public class Board {
         placePieces(defaultBoardArray());
     }
     
-    public Board(Square[][] gameBoard) {
-        this.gameBoard = gameBoard;
-    }
+    // public Board(Square[][] gameBoard) {
+    //     this.gameBoard = gameBoard;
+    // }
     
     public Board(int[] board) {
         constructNewGameBoard();
@@ -54,25 +54,6 @@ public class Board {
                    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
         return a;
     }
-    
-    // private Square[] newRow(Square square, int start) {
-    //     Square[] s = blankSquareRow();
-    //
-    //     for (int i = start; i < 8; i += 2) {
-    //         s[i] = square;
-    //     }
-    //     return s;
-    // }
-    //
-    // private Square[] newRow(Square square, Piece piece, int start) {
-    //     Square[] s = blankSquareRow();
-    //
-    //     for (int i = start; i < 8; i += 2) {
-    //         s[i] = square;
-    //         s[i].placePiece(piece);
-    //     }
-    //     return s;
-    // }
     
     // Game States
     
