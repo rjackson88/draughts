@@ -1,6 +1,8 @@
 package stg.model.board;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import stg.model.AI.Difficulty;
+import stg.model.AI.SimpleAI;
 import stg.model.piece.Piece;
 import stg.model.piece.PieceColor;
 
@@ -8,10 +10,35 @@ import stg.model.piece.PieceColor;
 import java.util.ArrayList;
 import java.util.List;
 
+import static stg.model.AI.Difficulty.EASY;
+
 /**
  * Created by rickjackson on 3/10/17.
  */
 public class Board {
+
+    private void blackCount(){
+        int count = 0;
+        for (int i = 0; i < 32; i++){
+            if( board[i] == 1 || board[i] == 2)
+                count++;
+        }
+        this.blackCount = count;
+    }
+    private void whiteCount(){
+        int count = 0;
+        for (int i = 0; i < 32; i++){
+            if( board[i] == -1 || board[i] == -2)
+                count++;
+        }
+        this.whiteCount = count;
+    }
+
+    public void setCounts(){
+        blackCount();
+        whiteCount();
+    }
+
     @JsonIgnore
     private Square[][] gameBoard = new Square[8][8];
     private int[] board = new int[32];
@@ -20,19 +47,55 @@ public class Board {
     private int whiteCount;
     private int blackCount;
     private boolean mustJump = false;
+    private int ID = 1;
+    private Difficulty difficulty = EASY;
     
     public Board() {
         this.board = defaultBoardArray();
         constructNewGameBoard();
         placePieces(defaultBoardArray());
+        setCounts();
+
     }
 
     public Board(int[] board) {
         this.board = board;
         constructNewGameBoard();
         placePieces(board);
+        setCounts();
+
     }
-    
+    public Board aiLevel(){
+
+        switch (difficulty){
+            case EASY:
+               return SimpleAI.getNewBoardEasy(this);
+
+            case MEDIUM:
+                return SimpleAI.getNewBoardMedium(this);
+            case HARD:
+                return SimpleAI.getNewBoardAdvanced(this);
+                default:
+                    return SimpleAI.getNewBoardEasy(this);
+        }
+    }
+
+    public Difficulty getDifficulty() {
+        return difficulty;
+    }
+
+    public void setDifficulty(Difficulty difficulty) {
+        this.difficulty = difficulty;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public boolean isMustJump() {
+        return mustJump;
+    }
+
     public int getPositionFrom() {
         return positionFrom;
     }
@@ -193,6 +256,7 @@ public class Board {
     
     public void movePiece(int from, int to) {
         getPiece(from).move.move(to);
+
     }
     
     public void movePiece() {
@@ -245,8 +309,10 @@ public class Board {
     }
 
     public Board createPossibleBoardState(int positionFrom, int positionTo) {
-        Board boardCopy = new Board(this.board);
+        Board boardCopy = this;
         boardCopy.movePiece(positionFrom, positionTo);
         return boardCopy;
     }
+
+
 }

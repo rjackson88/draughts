@@ -19,7 +19,7 @@ public class SimpleAITest {
 
     @Test
     public void getNewBoard() throws Exception {
-        Board actual = SimpleAI.getNewBoardIntermediate(board);
+        Board actual = SimpleAI.getNewBoardEasy(board);
         board.movePiece(8,12);
         System.out.println(board);
         System.out.println(actual);

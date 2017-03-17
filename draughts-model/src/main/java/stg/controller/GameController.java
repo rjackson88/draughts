@@ -1,7 +1,6 @@
 package stg.controller;
 
 import org.springframework.web.bind.annotation.*;
-import stg.model.AI.SimpleAI;
 import stg.model.board.Board;
 
 /**
@@ -39,6 +38,9 @@ public class GameController {
     @RequestMapping(value = "/aiMove", method = RequestMethod.POST, produces = {"application/json"})
     public Board aiIntermediateMove(@RequestBody Board board){
 
-        return SimpleAI.getNewBoardIntermediate(board);
+
+
+       return board.aiLevel();
+
     }
 }
