@@ -24577,30 +24577,40 @@ ion-navbar.toolbar {
   transform: translateY(4px);
 }
 
-.gu-mirror {
-  position: fixed !important;
-  margin: 0 !important;
-  z-index: 9999 !important;
-  opacity: 0.8;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-  filter: alpha(opacity=80);
+.button3 {
+  display: inline-block;
+  padding: 1px 10px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: cornflowerblue;
+  border: none;
+  border-radius: 200px;
+  box-shadow: 0 9px #999;
 }
 
-.gu-hide {
-  display: none !important;
+.button3 .wrapper {
+  text-align: center;
+  border: none;
 }
 
-.gu-unselectable {
-  -webkit-user-select: none !important;
-  -moz-user-select: none !important;
-  -ms-user-select: none !important;
-  user-select: none !important;
+.button3 .wrapper .col {
+  border: none;
+  color: white;
 }
 
-.gu-transit {
-  opacity: 0.2;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
-  filter: alpha(opacity=20);
+.button3:hover {
+  background-color: #3e8e41;
+}
+
+.button3:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
 }
 
 #center {

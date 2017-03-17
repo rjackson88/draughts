@@ -10,7 +10,7 @@
     <ion-col width-12.5 class ='bl'></ion-col>
     <ion-col width-12.5 class ='wh' id='01'>
       <img [src]="populatePosition(checkersBoard.board[0])">
-        <button [disabled]="!isValid(0)" class='button' on-click="moveSelection(0)"></button>
+        <button [disabled]="!isValid(0)" class='button' on-click="moveSelection(0)" on-click="populatePosition(checkersBoard.board[0])"></button>
     </ion-col>
      <ion-col width-12.5 class ='bl'></ion-col>
     <ion-col width-12.5 class ='wh' id ='02'>
@@ -58,10 +58,10 @@
      
      
     
-      <ion-list class="gu" [dragula]="button" [dragulaModel]="checkersBoard.board">
+     
        <img  [src]="populatePosition(checkersBoard.board[8])">
        <button  [disabled]="!isValid(8)" class='button' on-click="moveSelection(8)"></button>
-      </ion-list>
+
 
 
 
@@ -86,10 +86,10 @@
     <ion-col class = 'wh' id='13'>
       
       
-       <ion-list [dragula]='"button"' [dragulaModel]="checkersBoard.board">
+      
        <img [src]="populatePosition(checkersBoard.board[12])">
         <button [disabled]="!isValid(12)" class='button' on-click="moveSelection(12)"></button>
-       </ion-list>
+      
    
 
 
@@ -157,7 +157,7 @@
     <ion-col class = 'bl'></ion-col>
     <ion-col class = 'wh' id = '24'>
        <img [src]="populatePosition(checkersBoard.board[23])">
-        <button [disabled]="!isValid(24)" class='button' on-click="moveSelection(24)"></button>
+        <button [disabled]="!isValid(23)" class='button' on-click="moveSelection(23)"></button>
     </ion-col>
     <ion-col class = 'bl'></ion-col>
   </ion-row>
@@ -166,17 +166,17 @@
     <ion-col class = 'bl'></ion-col>
     <ion-col class = 'wh' id='25'>
       <img [src] = "populatePosition(checkersBoard.board[24])">
-       <button [disabled]="!isValid(25)" class='button' on-click="moveSelection(25)"></button>
+       <button [disabled]="!isValid(24)" class='button' on-click="moveSelection(24)"></button>
     </ion-col>
      <ion-col class = 'bl'></ion-col>
     <ion-col class = 'wh' id ='26'>
       <img [src] = "populatePosition(checkersBoard.board[25])">
-       <button [disabled]="!isValid(26)" class='button' on-click="moveSelection(26)"></button>
+       <button [disabled]="!isValid(25)" class='button' on-click="moveSelection(25)"></button>
     </ion-col>
      <ion-col class = 'bl'></ion-col>
     <ion-col class = 'wh' id = '27'>
       <img [src] = "populatePosition(checkersBoard.board[26])">
-       <button [disabled]="!isValid(27)" class='button' on-click="moveSelection(27)"></button>
+       <button [disabled]="!isValid(26)" class='button' on-click="moveSelection(26)"></button>
     </ion-col>
      <ion-col class = 'bl'></ion-col>
     <ion-col class = 'wh' id = '28'>
@@ -217,6 +217,8 @@
   <li> <button class='button2' on-click='newGame()'>New Game</button> </li>
   <li> <button class='button2' on-click='saveGame()'>Save Game</button> </li>
   <li> <button class='button2' on-click='loadGame()'>Load Game</button> </li>
+  <li><button class='button3' on-click='aiEasy()'>Easy :'(</button>
+  <button class='button3' on-click='aiMedium()'>Medium >:)</button></li>
   </ul>
 </div>
 
@@ -234,7 +236,18 @@
   <ion-col>
   <button class='button2' on-click='loadGame()'>Load Game</button>
   </ion-col>
+
 </ion-row>
+    <ion-col>
+      <ion-row  responsive-sm>
+        <li>
+      
+  <button class='button3' ng-click="active = true" on-click='aiEasy()'>Easy :'(</button>
+  <button class='button3' on-click='aiMedium()'>Medium >:)</button>
+  
+  </li>
+      </ion-row>
+    </ion-col>
 </ion-grid>
 
 
