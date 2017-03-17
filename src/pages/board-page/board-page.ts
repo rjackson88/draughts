@@ -81,7 +81,7 @@ saveAlert() {
 }
 
   newGame(){
- this.http.get("http://localhost:8080/newGame").
+ this.http.get("https://warm-spire-37520.herokuapp.com/newGame").
  subscribe(res =>{ this.checkersBoard = new jsonInterface(res.json()); console.log(this.checkersBoard)})
 
   
@@ -96,12 +96,12 @@ saveAlert() {
   }
 
   loadGame(){
-    this.http.get("http://localhost:8080/load").subscribe(res => {this.checkersBoard = new jsonInterface(res.json()); this.loadAlert()})
+    this.http.get("https://warm-spire-37520.herokuapp.com/load").subscribe(res => {this.checkersBoard = new jsonInterface(res.json()); this.loadAlert()})
   }
 
 saveGame(){
 
-  this.http.put("http://localhost:8080/save",this.checkersBoard).subscribe(res=>{console.log(res); this.saveAlert()})
+  this.http.put("https://warm-spire-37520.herokuapp.com/save",this.checkersBoard).subscribe(res=>{console.log(res); this.saveAlert()})
 }
 
 
@@ -142,7 +142,7 @@ saveGame(){
   }
 
 aiMove(){
-  setTimeout(() => this.http.post("http://localhost:8080/aiMove", this.checkersBoard).subscribe(res => {
+  setTimeout(() => this.http.post("https://warm-spire-37520.herokuapp.com/aiMove", this.checkersBoard).subscribe(res => {
     (this.checkersBoard = new jsonInterface(res.json()));this.setCount();
     this.checkWinner(); console.log(this.checkersBoard)}), 1500);
   
@@ -156,12 +156,12 @@ this.checkersBoard.click = true;
 
       if(this.checkersBoard.board[position] == -3 || this.checkersBoard.board[position] == -3){
          this.checkersBoard.click = false;
-         this.http.post("http://localhost:8080/clearMoves", this.checkersBoard).subscribe(
+         this.http.post("https://warm-spire-37520.herokuapp.com/clearMoves", this.checkersBoard).subscribe(
         res => {this.checkersBoard = new jsonInterface(res.json()); console.log(this.checkersBoard)}
         )
       }
      else
-      this.http.post("http://localhost:8080/checkMoves", this.checkersBoard).subscribe(
+      this.http.post("https://warm-spire-37520.herokuapp.com/checkMoves", this.checkersBoard).subscribe(
         res => {this.checkersBoard = new jsonInterface(res.json()); }
       )
     }
@@ -171,7 +171,7 @@ this.checkersBoard.click = true;
       else if( (this.checkersBoard.positionFrom != position && this.checkersBoard.board[position] >= 0 )){
       this.checkersBoard.positionFrom = position;
       this.type = this.checkersBoard.board[position];
-      this.http.post("http://localhost:8080/checkMoves", this.checkersBoard).subscribe(
+      this.http.post("https://warm-spire-37520.herokuapp.com/checkMoves", this.checkersBoard).subscribe(
         res => {this.checkersBoard = new jsonInterface(res.json());this.checkersBoard.board[position] = 5}
       )
     }
@@ -179,7 +179,7 @@ this.checkersBoard.click = true;
     else if((this.checkersBoard.positionFrom == position && this.checkersBoard.board[position] >= 0)){
           this.checkersBoard.click = false;
           this.checkersBoard.positionFrom = 0;
-           this.http.post("http://localhost:8080/clearMoves", this.checkersBoard).subscribe(
+           this.http.post("https://warm-spire-37520.herokuapp.com/clearMoves", this.checkersBoard).subscribe(
         res => {this.checkersBoard = new jsonInterface(res.json()); this.checkersBoard.board[position] = this.type}
         )
     }
@@ -188,7 +188,7 @@ this.checkersBoard.click = true;
       this.checkersBoard.click = false;
       this.checkersBoard.board[this.checkersBoard.positionFrom] = this.type;
       this.checkersBoard.positionTo = position;
-      this.http.post("http://localhost:8080/movePiece", this.checkersBoard).subscribe(
+      this.http.post("https://warm-spire-37520.herokuapp.com/movePiece", this.checkersBoard).subscribe(
         res => {this.checkersBoard = new jsonInterface(res.json());this.setCount();
           this.checkWinner();this.aiMove()}
         )
