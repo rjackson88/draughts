@@ -7,6 +7,6 @@ import org.springframework.data.repository.CrudRepository;
  */
 public interface BoardDOA extends CrudRepository<BoardEntity,Long> {
 
-    public BoardEntity findByid(int ID);
+    public BoardEntity findByid(int id);
 
 }
