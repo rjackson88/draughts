@@ -53,4 +53,9 @@ public class AI {
         return positionScore;
     }
 
+    static public Board getNewBoardAdvanced(Board board) {
+        DecisionTreeNode dtn = new DecisionTreeNode(board);
+        dtn.create(PieceColor.WHITE);
+        return dtn.getMove(PieceColor.WHITE).board;
+    }
 }

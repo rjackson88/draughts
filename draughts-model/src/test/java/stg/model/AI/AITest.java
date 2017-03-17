@@ -11,6 +11,7 @@ import static org.junit.Assert.*;
  * Created by kevinmccann on 3/15/17.
  */
 public class AITest {
+
     Board board;
 
     @Before
@@ -20,7 +21,9 @@ public class AITest {
 
     @Test
     public void evaluateBoardBlackTest() throws Exception {
-
+        int expected = 17;
+        int actual = AI.evaluateBoard(board, PieceColor.BLACK);
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -45,6 +48,13 @@ public class AITest {
     public void evaluateBoardPiecePositionsBlackTest() throws Exception {
         int expected = 17;
         int actual = AI.evaluateBoardPiecePositions(board, PieceColor.BLACK);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void getNewBoardAdvancedTest() throws Exception {
+        int expected = 20;
+        int actual = AI.evaluateBoard(AI.getNewBoardAdvanced(board), PieceColor.WHITE);
         assertEquals(expected, actual);
     }
 
