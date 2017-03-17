@@ -19,12 +19,12 @@ public class DecisionTreeNode {
     }
 
     public void create(PieceColor color) throws NullPointerException {
-        for( DecisionTreeNode node : children) {
+        for (DecisionTreeNode node : children) {
             node.create(color == PieceColor.BLACK ? PieceColor.WHITE : PieceColor.BLACK);
         }
-        if(children.isEmpty()) {
+        if (children.isEmpty()) {
             List<Integer> possibleMovers = board.getAllPossibleMovers(color);
-            for(Integer pieceIndex : possibleMovers) {
+            for (Integer pieceIndex : possibleMovers) {
                 List<Integer> possibleMoves = board.getAllMovesForPiece(pieceIndex);
                 for (int positionTo : possibleMoves) {
                     Board move;
@@ -66,9 +66,9 @@ public class DecisionTreeNode {
         }
 
         DecisionTreeNode best = null;
-        int maxScore = (color == PieceColor.WHITE ? -10000 : 10000);
+        double maxScore = (color == PieceColor.WHITE ? Double.NEGATIVE_INFINITY : Double.POSITIVE_INFINITY);
         for(DecisionTreeNode node : children) {
-            int score = node.bestBoardPosition(PieceColor.WHITE);
+            double score = node.bestBoardPosition(PieceColor.WHITE);
             if(best == null || score * (color == PieceColor.WHITE ? 1 : -1) > maxScore * (color == PieceColor.WHITE ? 1 : -1)) {
                 maxScore = score;
                 best = node;
